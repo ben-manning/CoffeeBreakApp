@@ -1,0 +1,30 @@
+//**Coffee Break**//
+
+*What is Coffee Break*
+Coffee Break is on it's way to becoming a hub of wonderful local, hip, work-friendly coffee spots recommended by the biggest coffee lovers, work-from-homers, students, and most importantly..YOU. Users will be able to find coffee shops (based on their preferences) and have the ability to add and share their own favorite spots to grab some caffeine.
+
+*MVP* -- Users can find the coffee shops of their liking on the fly!
+
+-Website will present posted coffee shops with their locations and attributes.
+-Users will be able to explore  coffee shop index and find a coffee shop specified w/ their preferred location and
+attributes that they seek.
+  -"Find" button
+  -"Find Coffee Spot" form
+-Users will can add their own favorite spots by filling out a "New Coffee Spot" form.
+  -"New Coffee Spot" form
+  -"Add" button
+-Users can make changes to coffee spot content.
+  -find coffee spot by id
+  -Make edits, confirm, and save!
+-Users can delete coffee spots that are out of business/inactive.
+  -find coffee spot by id
+  -navigate to that particular entry
+  -hit "delete coffee spot" button
+
+  *Stretches*
+  -Incorporating google map locations
+  -Adding a "like" button for coffee shops
+  -User Authorization
+    -login
+    -bookmarking
+  -Image uploading
