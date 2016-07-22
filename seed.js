@@ -16,8 +16,9 @@ var coffeeSpotsList = [
       outdoorSeating: true ,
       petFriendly: true,
       parkingLot: false,
-      _location: 'Location'
+      // _location: 'Location'
     },
+
     {
       name: "Ritual Coffee Roasters",
       freeWifi: true,
@@ -30,8 +31,9 @@ var coffeeSpotsList = [
       outdoorSeating: false,
       petFriendly: false,
       parkingLot: false,
-      _location: 'Location'
+      // _location: 'Location'
     },
+
     {
       name: "Haus Coffee",
       freeWifi: true,
@@ -44,5 +46,15 @@ var coffeeSpotsList = [
       outdoorSeating: false,
       petFriendly: false,
       parkingLot: false,
-      _location: 'Location'
+      // _location: 'Location'
     }];
+
+    function savedCoffeeSpot(err, success){
+        if (err) {return console.log("!!ERROR!! Could not save coffee spots", err);}
+        console.log("SUCCESS!", success);
+    }
+
+  db.CoffeeSpot.create(coffeeSpotsList, function(err, createdCoffeeSpots){
+    if (err) {return console.log("!!ERROR!!, err");}
+    console.log("SUCCESS!!! CREATED createdCoffeeSpots:" + createdCoffeeSpots);
+    });

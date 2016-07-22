@@ -109,39 +109,41 @@
     <div>
     </div>
 
-  <<!--BEGINNING ROW FOR COFEE SPOT ENTRY-->>
+    <div id='target'>
+      <script id="coffeeSpot-template" type="text/x-handlebars-template">
+        <<!--BEGINNING ROW FOR COFEE SPOT ENTRY-->>
+        <div class="col-md-5" id='spotEntry'>
+          <h3>{{name}}</h3>
+          <button type="button" class="btn btn-primary-outline">Edit</button>
+          <button type="button" class="btn btn-primary-outline">Delete</button>
 
-    <div class="col-md-5" id='spotEntry'>
-      <h3>Coffee Spot Name</h3>
-      <button type="button" class="btn btn-primary-outline">Edit</button>
-      <button type="button" class="btn btn-primary-outline">Delete</button>
-
-      <div class='col-md-4'>
-        <h4>Location</h4>
-        <ul>
-          <li>Attribute</li>
-          <li>Attribute</li>
-          <li>Attribute</li>
-          <li>Attribute</li>
-          <li>Attribute</li>
-          <li>Attribute</li>
-          <li>Attribute</li>
-          <li>Attribute</li>
-        </ul>
+          <div class='col-md-4'>
+            <h4>Location</h4>
+            <ul>
+              <li>free wifi: {{freeWifi}}</li>
+              <li>fast wifi: {{fastWifi}}</li>
+              <li>Outlets: {{outlets}}</li>
+              <li>Good Coffee: {{goodCoffee}}</li>
+              <li>Lively Atmosphere: {{lively}}</li>
+              <li>Quiet Atmosphere: {{quiet}}</li>
+              <li>Good for Groups: {{goodForGroups}}</li>
+              <li>Outoor Seating: {{outdoorSeating}}</li>
+              <li>Pet Friendly: {{petFriendly}}</li>
+              <li>Parking Lot: {{parkingLot}}</li>
+            </ul>
+          </div>
+          <img src="X">
+        </div>
       </div>
-                  <img src="X">
+      <button type="button" class="btn btn-secondary">Add coffee spot</button>
+      <nav class="navbar navbar-fixed-bottom navbar-light bg-faded">
+        <a class="navbar-brand" href="#">Fixed bottom</a>
+      </nav>
+
     </div>
   </div>
-  <button type="button" class="btn btn-secondary">Add coffee spot</button>
-  <nav class="navbar navbar-fixed-bottom navbar-light bg-faded">
-    <a class="navbar-brand" href="#">Fixed bottom</a>
-  </nav>
-
 </div>
 </div>
-</div>
-<!--Form Break -->
-
 
 
 
