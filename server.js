@@ -1,4 +1,4 @@
-console.log("Sanity Check");
+console.log("SANITY CHECK- I'M WORKING");
 // SERVER-SIDE JAVASCRIPT
 
 //require express in our app
@@ -9,22 +9,22 @@ var app = express();
 app.use(express.static(__dirname + '/public'));
 
 app.use('/vendor', express.static(__dirname + '/bower_components'));
+
 app.use(bodyParser.urlencoded({ extended: true }));
+
+var controllers = require('./controllers');
+
 //ROUTES
-/* HTML Endpoints*/
+//HTML Endpoints
 app.get('/', function homepage (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-var controllers = require('./controllers');
-/* JSON API Endpoints*/
-
-//PATH TO API JSON "LIBARY"
-app.get('/api',controllers.api.index);
+//JSON API Endpoints
+app.get('/api', controllers.api.index);
+app.get('/api/coffeespots',controllers.coffeespots.index);
 
 /* SERVER */
-
-// listen on port 3000
 app.listen(process.env.PORT || 3000, function () {
-  console.log('Express server is running on http://localhost:3000/');
+  console.log('EXPRESS SERVER IS RUNNING ON: http://localhost:3000/');
 });

@@ -7,7 +7,7 @@ var coffeeSpotsList = [
       name: "Filter Coffee House",
       freeWifi: true,
       fastWifi: true,
-      openNow: ,
+      // openNow: ,
       outlets: true,
       goodCoffee: true,
       lively: true,

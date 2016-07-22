@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
- mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/coffeebreak");
+mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/coffeebreak");
 
 module.exports.CoffeeSpot = require('./coffeespot.js');
 
