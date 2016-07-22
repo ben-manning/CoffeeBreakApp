@@ -4,11 +4,11 @@ var Location = require('./location.js');
 
 var CoffeeSpotSchema = new Schema({
   name: String,
+  openNow:Boolean,
   address: String,
   freeWifi: Boolean,
   fastWifi: Boolean,
   outlets: Boolean,
-  openNow: Boolean,
   goodCoffee: Boolean,
   lively: Boolean,
   quiet: Boolean,
