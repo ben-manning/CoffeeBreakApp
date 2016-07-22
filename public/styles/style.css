@@ -1,26 +1,35 @@
+.jumbotron {
+background-image: url(../images/jumbcoffee.jpg);
+background-size: cover;
+
+}
+.jumbotron .container {
+  height: 350px;
+}
+
+body {
+    background-color: light gray;
+}
+
 .filter-column {
-    background-color: blue;
 }
 
 #spotEntry {
   min-height:100px;
-  width:700px;
+  width:600px;
   margin-left:10px;
 }
 
 .form-vertical {
     font-size: 13px;
-    background-color: orange;
     padding-top: 10px;
 }
 
-.col-md-7{
-  background-color: blue;
+.col-md-5{
   border-style: solid;
 }
 
 .recommendations {
-    background-color: yellow;
     border-style: solid;
 }
 
@@ -31,9 +40,16 @@
 
 .checkbox {
     width: 500px;
-    padding-left: 15px;
+    padding-left: 10px;
+
 }
 
 img {
-    float: right;
+    float: inherit;;
+    margin-left: 100px
+
+}
+
+.container {
+    border-style: dashed;;
 }

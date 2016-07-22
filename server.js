@@ -5,22 +5,23 @@ console.log("Sanity Check");
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-var controllers = require('./controllers');
+
 
 app.use(express.static(__dirname + '/public'));
 
+app.use('/vendor', express.static(__dirname + '/bower_components'));
+app.use(bodyParser.urlencoded({ extended: true }));
 //ROUTES
 /* HTML Endpoints*/
-
 app.get('/', function homepage (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-
+var controllers = require('./controllers');
 /* JSON API Endpoints*/
 
-
-
+//PATH TO API JSON "LIBARY"
+app.get('/api',controllers.api.index);
 
 /* SERVER */
 

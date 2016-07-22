@@ -1,10 +1,10 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
+var Location = require('./location.js');
 
 var CoffeeSpotSchema = new Schema({
   name: String,
   address: String,
-  _location: [Location.schema],
   freeWifi: Boolean,
   fastWifi: Boolean,
   outlets: Boolean,
@@ -16,7 +16,7 @@ var CoffeeSpotSchema = new Schema({
   outdoorSeating: Boolean,
   petFriendly: Boolean,
   parkingLot: Boolean,
-  //recommendations
+  _location: [Location.schema], //reference
 });
 
 var CoffeeSpot = mongoose.model('CoffeeSpot', CoffeeSpotSchema);
