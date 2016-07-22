@@ -1,0 +1,39 @@
+.filter-column {
+    background-color: blue;
+}
+
+#spotEntry {
+  min-height:100px;
+  width:700px;
+  margin-left:10px;
+}
+
+.form-vertical {
+    font-size: 13px;
+    background-color: orange;
+    padding-top: 10px;
+}
+
+.col-md-7{
+  background-color: blue;
+  border-style: solid;
+}
+
+.recommendations {
+    background-color: yellow;
+    border-style: solid;
+}
+
+#filterForm {
+    margin-left: 20px;
+    border-style: solid;
+}
+
+.checkbox {
+    width: 500px;
+    padding-left: 15px;
+}
+
+img {
+    float: right;
+}
