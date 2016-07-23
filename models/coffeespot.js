@@ -16,6 +16,7 @@ var CoffeespotSchema = new Schema({
   outdoorSeating: Boolean,
   petFriendly: Boolean,
   parkingLot: Boolean,
+  image:String,
   _location: [Location.schema], //reference
 });
 

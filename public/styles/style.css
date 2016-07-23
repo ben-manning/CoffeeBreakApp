@@ -44,10 +44,9 @@ body {
 
 }
 
-img {
+.image {
     float: inherit;;
-    margin-left: 100px
-
+    margin-left: 70px;
 }
 
 .container {

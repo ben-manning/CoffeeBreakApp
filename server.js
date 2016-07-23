@@ -25,7 +25,8 @@ app.get('/api', controllers.api.index);
 
 app.get('/api/coffeespots',controllers.coffeespots.index);
 
-app.get('/api/coffeespots/:id', controllers.coffeespots.show);
+app.get('/api/coffeespots/:coffeespot_id',controllers.coffeespots.show);
+
 
 
 /* SERVER */

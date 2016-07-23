@@ -43,8 +43,4 @@ $('#target').text("FAILED TO LOAD COFFEESPOTS");
           render(coffeespot);
       });
   }
-  // $.get('/api/coffeespots', function coffeeSpotsIndex(req, res) {
-  //   db.Coffeespot.find(function handleDBCoffeeSpotsListed(err, allCoffeeSpots){
-  //     res.json({ coffeeSpots: allCoffeeSpots});
-  //   });
 });

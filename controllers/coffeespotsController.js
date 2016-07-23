@@ -8,7 +8,19 @@ function index(req, res) {
       res.json(allCoffeeSpots);
   });
 }
+function show(req, res){
+    var coffeespotId = req.params.coffeespot_id;
+    db.Coffeespot.findById(coffeespotId, function(err, foundCoffeespot){
+        if (err) {console.log("!! ERROR !! COULD NOT FIND COFFEE SPOT");}
+        console.log("FOUND coffee spot:" + foundCoffeespot);
+        res.json(foundCoffeespot);
+    });
+}
+
+
+
 
 module.exports = {
-  index: index
+  index: index,
+  show: show,
 };

@@ -1,5 +1,3 @@
-// This file allows us to seed our application with data
-// simply run: `node seed.js` from the root of this project folder.
 var db = require("./models");
 
 var coffeeSpotsList = [
@@ -16,6 +14,7 @@ var coffeeSpotsList = [
       outdoorSeating: true ,
       petFriendly: true,
       parkingLot: false,
+      image:"/images/defaultImg.png"
       // _location: 'Location'
     },
 
@@ -31,6 +30,7 @@ var coffeeSpotsList = [
       outdoorSeating: false,
       petFriendly: false,
       parkingLot: false,
+      image:"/images/defaultImg.png"
       // _location: 'Location'
     },
 
@@ -46,15 +46,33 @@ var coffeeSpotsList = [
       outdoorSeating: false,
       petFriendly: false,
       parkingLot: false,
+      image:"/images/defaultImg.png"
       // _location: 'Location'
     }];
 
-    function savedCoffeeSpot(err, success){
-        if (err) {return console.log("!!ERROR!! Could not save coffee spots", err);}
-        console.log("SUCCESS!", success);
+//puts coffeespot in db-- the remove and create keeps seed data in db. all other entries would be refreshed followed node seed.js
+db.Coffeespot.remove({}, function(err, savedCoffeeSpots) {
+    if (err) {
+        console.log("!!!! ERROR OCCURED IN REMOVAL", err);
+      } else {
+        console.log("!!! Removed ALL coffeespot entries and left seed data only!!");
     }
-
-  db.CoffeeSpot.create(coffeeSpotsList, function(err, createdCoffeeSpots){
-    if (err) {return console.log("!!ERROR!!, err");}
+db.Coffeespot.create(coffeeSpotsList, function(err, createdCoffeeSpots){
+    if (err) {
+      return console.log("!!ERROR!!, err");}
     console.log("SUCCESS!!! CREATED createdCoffeeSpots:" + createdCoffeeSpots);
+});
+    coffeeSpotsList.forEach(function(coffeespot){
+        var searchParam = {name: coffeespot.name};
+        db.Coffeespot.findOne(searchParam, function(err, album){
+            if(err){return console.log("!!ERROR:" + err);}
+        });
+    });
+
+
+
+
+
+
+
     });
