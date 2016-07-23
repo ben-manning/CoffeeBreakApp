@@ -36,6 +36,20 @@ function destroy (req, res) {
       });
 }
 
+function update(req, res) {
+    console.log("UPDATING with data," + req.body);
+    db.Location.findById(req.params.location_id, function(err, foundLocation){
+        if (err) {console.log("!!UPDATE ERROR!");}
+        foundLocation.city = req.body.city;
+
+        foundLocation.save(function(err, savedLocation){
+            if (err) {console.log("FAILED to save changes");
+          }
+          res.json(savedLocation);
+        });
+    });
+}
+
 
 
 
@@ -63,5 +77,6 @@ module.exports = {
   index: index,
   show: show,
   create: create,
-  destroy: destroy
+  destroy: destroy,
+  update: update
 };
