@@ -7,6 +7,7 @@ base_url: "http://CoffeeBreak.herokuapp.com",
       {method: "GET", path: "/api", description: "Describes available endpoints"},
       {method: "GET", path: "/api/coffeespots", description: "Find ALL coffee spots"},
       {method: "GET", path: "/api/coffeespots/:id", description: "Find coffeespot by ID"},
+      {method: "GET", path: "/api/locations", description: "Find all locations"},
       {method: "POST", path: "/api/coffeespots/", description: "Add a new coffee spot"},
       {method: "DELETE", path: "/api/coffeespots/:id", description: "Delete coffee spot by ID"}
     ]
