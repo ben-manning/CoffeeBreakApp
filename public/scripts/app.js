@@ -21,9 +21,8 @@ function render(coffeespot){
     //pass 'all coffeesports' into the template fxn
     var coffeeSpotHtml = template(coffeespot);
     //append html to the view
-    $coffeeSpotsList.append(coffeeSpotHtml);
+    $coffeeSpotsList.prepend(coffeeSpotHtml);
 }
-
 function handleSuccess(json) {
     allCoffeeSpots = json;
     render();

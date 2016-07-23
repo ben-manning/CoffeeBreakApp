@@ -27,6 +27,7 @@ app.get('/api/coffeespots',controllers.coffeespots.index);
 
 app.get('/api/coffeespots/:coffeespot_id',controllers.coffeespots.show);
 
+app.post('/api/coffeespots', controllers.coffeespots.create);
 
 
 /* SERVER */

@@ -1,13 +1,23 @@
 db = require('../models');
 
-var coffeeSpots = [];
-
 function index(req, res) {
   db.Coffeespot.find(function (err, allCoffeeSpots){
     if (err) {console.log("INDEX ERROR CANT FIND DIS");}
       res.json(allCoffeeSpots);
   });
 }
+
+function create(req, res){
+    return console.log('body', req.body);
+}
+
+// db.Coffeespot.create(req.body, function(err, coffeespot){
+//     if (err) {console.log("ERROR!", err);}
+//     console.log(coffeespot);
+//     res.json(coffeespot);
+//   });
+// }
+
 function show(req, res){
     var coffeespotId = req.params.coffeespot_id;
     db.Coffeespot.findById(coffeespotId, function(err, foundCoffeespot){
@@ -20,7 +30,10 @@ function show(req, res){
 
 
 
+
+
 module.exports = {
   index: index,
   show: show,
+  create: create,
 };
