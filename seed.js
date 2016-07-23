@@ -49,19 +49,23 @@ var coffeeSpotsList = [
       // _location: 'Location'
     }];
 
-    // var locationsList = [
-    //   {
-    //     city:,
-    //     state:,
-    //     zipcode:,
-    //
-    //   },
-    //
-    //
-    //
-    //
-    //
-    // ];
+    var locationsList = [
+      {
+        city: "san diego",
+        state: "ca",
+        zipcode: "92103",
+      },
+      {
+        city: "san francisco",
+        state: "ca",
+        zipcode: "94102",
+      },
+      {
+        city: "san francisco",
+        state: "ca",
+        zipcode: "94110"
+      }
+    ];
 //puts coffeespot in db-- the remove and create keeps seed data in db. all other entries would be refreshed followed node seed.js
 db.Coffeespot.remove({}, function(err, savedCoffeeSpots) {
     if (err) {
