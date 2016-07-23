@@ -30,12 +30,16 @@ app.get('/api/locations', controllers.locations.index);
 
 app.get('/api/locations/:location_id', controllers.locations.show);
 
+app.post('/api/locations', controllers.locations.create);
+
 app.post('/api/coffeespots', controllers.coffeespots.create);
 
 app.put('/api/coffeespots/:coffeespot_id', controllers.coffeespots.update);
 
 
 app.delete('/api/coffeespots/:coffeespot_id', controllers.coffeespots.destroy);
+
+app.delete('/api/locations/:location_id', controllers.locations.destroy);
 
 
 /* SERVER */

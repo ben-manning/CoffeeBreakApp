@@ -28,7 +28,12 @@ function create (req, res) {
 }
 
 function destroy (req, res) {
-
+  db.Location.findOneAndRemove({
+      _id: req.params.location_id}, function(err, foundLocation){
+          if (err) {return console.log("ERROR DELETING LOCATION");}
+          console.log("!! SUCCESSFULLY DELETED" + foundLocation);
+          res.json(foundLocation);
+      });
 }
 
 
