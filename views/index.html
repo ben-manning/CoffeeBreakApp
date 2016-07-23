@@ -36,7 +36,7 @@
           </div>
 
           <div class="form-group">
-            <button type="button" class="btn btn-secondary-outline">Find</button>
+            <button type="submit" class="btn btn-secondary-outline">Find</button>
           </div>
         </div>
         <label class='col-md-4' for='location'>Attributes</label>
@@ -112,7 +112,8 @@
     <div id='target'>
       <script id="coffee-template" type="text/x-handlebars-template">
         <<!--BEGINNING ROW FOR COFEE SPOT ENTRY-->>
-        <div class="col-md-5" id='spotEntry'>
+        <div class="col-md-5" id='spotEntry' data-coffeespot-id=
+      "{{_id}}">
           <h3>{{name}}</h3>
           <button type="button" class="btn btn-primary-outline">Edit</button>
           <button type="button" class="btn btn-primary-outline">Delete</button>

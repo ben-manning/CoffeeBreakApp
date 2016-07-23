@@ -1,25 +1,11 @@
 console.log("SANITY CHECK!");
-
+$(document).ready(function(){
 var template;
 var $coffeeSpotsList = $('#target');
-$(document).ready(function(){
+
 //compile handlebars template:
 var source = $("#coffee-template").html();
   template = Handlebars.compile(source);
-
-$.ajax({
-    method: 'GET',
-    url: '/api/coffeespots',
-    success: handleSuccess,
-    error: handleError
-});
-
-$.ajax({
-    method: 'POST',
-    url: '/api/coffeespots',
-    success: handleSuccess,
-    error: handleError
-});
 
 //function to render all posts to views
 function render(coffeespot){
@@ -41,11 +27,33 @@ $('#target').text("FAILED TO LOAD COFFEESPOTS");
 
   //get all coffeespots
   $.get('/api/coffeespots', onSuccess);
-
   function onSuccess(json){
       console.log("FOUND ALL COFFEESHOPS");
       json.forEach(function(coffeespot){
           render(coffeespot);
       });
+  }
+
+
+
+function handleDeleteCoffeespot(e) {
+    var coffeespotId = $(this).parents('.spotEntry').data('coffeespot-id');
+    var deletedContent = '/api/coffeespots/' + coffeespotId;
+    console.log("request to DELETE COFFEE SPOT ID=" + coffeespotId);
+    //DELETE ajax call
+    $.ajax({
+          url: deletedContent,
+          method: 'DELETE',
+          success: handleDeleteCoffeespot
+        });
+
+}
+
+
+
+  function onDeleteSuccess(data){
+      var deletedCoffeespotsId = data.coffeespot_id;
+      console.log("!! SUCCESS--REMOVED COFFEE SPOT:" + deletedCoffeespotsId);
+      $(deletedCoffeespotsId).remove();
   }
 });

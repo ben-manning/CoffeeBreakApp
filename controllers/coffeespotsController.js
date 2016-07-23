@@ -8,20 +8,14 @@ function index(req, res) {
 }
 
 function create(req, res){
-    return console.log('body', req.body);
-}
+    // return console.log('body', req.body);
+    db.Coffeespot.create(req.body, function(err, coffeespot){
+        if (err) {console.log("ERROR!", err);}
+        console.log(coffeespot);
+        res.json(coffeespot);
+      });
+    }
 
-// db.Coffeespot.create(req.body, function(err, coffeespot){
-//     if (err) {console.log("ERROR!", err);}
-//     console.log(coffeespot);
-//     res.json(coffeespot);
-//   });
-
-function destroy(req, res){
-    db.Coffeespots.findOneandRemove({coffeespot_id:req.params.coffeespotId}, function(err, foundCoffeespot){
-        res.json(foundCoffeespot);
-    });
-}
 
 
 function show(req, res){
@@ -33,6 +27,15 @@ function show(req, res){
     });
 }
 
+function destroy(req, res){
+    db.Coffeespots.findOneandRemove({coffeespot_id:req.params.coffeespotId}, function(err, foundCoffeespot){
+        res.json(foundCoffeespot);
+    });
+}
+//
+// function update(req, res) {
+//
+// }
 
 
 
