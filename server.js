@@ -26,10 +26,12 @@ app.get('/api/coffeespots',controllers.coffeespots.index);
 
 app.get('/api/coffeespots/:coffeespot_id',controllers.coffeespots.show);
 
-app.post('/api/coffeespots', controllers.coffeespots.create);{
-}
-// 
-// app.delete('/api/albums/:album_id', controllers.coffeespots.destroy);
+app.post('/api/coffeespots', controllers.coffeespots.create);
+
+app.put('/api/coffeespots/:coffeespot_id', controllers.coffeespots.update);
+
+
+app.delete('/api/coffeespots/:coffeespot_id', controllers.coffeespots.destroy);
 
 
 /* SERVER */
