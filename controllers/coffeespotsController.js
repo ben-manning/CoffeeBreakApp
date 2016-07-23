@@ -16,7 +16,13 @@ function create(req, res){
 //     console.log(coffeespot);
 //     res.json(coffeespot);
 //   });
-// }
+
+function destroy(req, res){
+    db.Coffeespots.findOneandRemove({coffeespot_id:req.params.coffeespotId}, function(err, foundCoffeespot){
+        res.json(foundCoffeespot);
+    });
+}
+
 
 function show(req, res){
     var coffeespotId = req.params.coffeespot_id;
@@ -36,4 +42,5 @@ module.exports = {
   index: index,
   show: show,
   create: create,
+  destroy: destroy
 };

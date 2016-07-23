@@ -1,14 +1,21 @@
 console.log("SANITY CHECK!");
-$(document).ready(function(){
+
 var template;
 var $coffeeSpotsList = $('#target');
-
+$(document).ready(function(){
 //compile handlebars template:
 var source = $("#coffee-template").html();
   template = Handlebars.compile(source);
 
 $.ajax({
     method: 'GET',
+    url: '/api/coffeespots',
+    success: handleSuccess,
+    error: handleError
+});
+
+$.ajax({
+    method: 'POST',
     url: '/api/coffeespots',
     success: handleSuccess,
     error: handleError
@@ -31,7 +38,6 @@ function handleError(e) {
 console.log("DIDN'T WORK!");
 $('#target').text("FAILED TO LOAD COFFEESPOTS");
 }
-
 
   //get all coffeespots
   $.get('/api/coffeespots', onSuccess);
