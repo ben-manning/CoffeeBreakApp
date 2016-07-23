@@ -3,7 +3,8 @@ db = require('../models');
 var coffeeSpots = [];
 
 function index(req, res) {
-  db.CoffeeSpot.find(function (err, allCoffeeSpots){
+  db.Coffeespot.find(function (err, allCoffeeSpots){
+    if (err) {console.log("INDEX ERROR CANT FIND DIS");}
       res.json(allCoffeeSpots);
   });
 }

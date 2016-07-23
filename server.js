@@ -22,7 +22,11 @@ app.get('/', function homepage (req, res) {
 
 //JSON API Endpoints
 app.get('/api', controllers.api.index);
+
 app.get('/api/coffeespots',controllers.coffeespots.index);
+
+app.get('/api/coffeespots/:id', controllers.coffeespots.show);
+
 
 /* SERVER */
 app.listen(process.env.PORT || 3000, function () {

@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 var Location = require('./location.js');
 
-var CoffeeSpotSchema = new Schema({
+var CoffeespotSchema = new Schema({
   name: String,
   openNow:Boolean,
   address: String,
@@ -19,6 +19,6 @@ var CoffeeSpotSchema = new Schema({
   _location: [Location.schema], //reference
 });
 
-var CoffeeSpot = mongoose.model('CoffeeSpot', CoffeeSpotSchema);
+var Coffeespot = mongoose.model('Coffeespot', CoffeespotSchema);
 
-module.exports = CoffeeSpot;
+module.exports = Coffeespot;
