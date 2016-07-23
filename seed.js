@@ -1,5 +1,4 @@
 var db = require("./models");
-
 var coffeeSpotsList = [
       {
       name: "Filter Coffee House",
@@ -50,6 +49,19 @@ var coffeeSpotsList = [
       // _location: 'Location'
     }];
 
+    // var locationsList = [
+    //   {
+    //     city:,
+    //     state:,
+    //     zipcode:,
+    //
+    //   },
+    //
+    //
+    //
+    //
+    //
+    // ];
 //puts coffeespot in db-- the remove and create keeps seed data in db. all other entries would be refreshed followed node seed.js
 db.Coffeespot.remove({}, function(err, savedCoffeeSpots) {
     if (err) {

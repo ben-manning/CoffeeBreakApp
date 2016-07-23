@@ -29,7 +29,6 @@ function show(req, res){
         res.json(foundCoffeespot);
     });
 }
-
 function destroy(req, res){
     db.Coffeespot.findOneAndRemove({_id: req.params.coffeespot_id}, function(err, foundCoffeespot){
         if (err) {return console.log("ERROR DELETING COFFEEESPOT");}
