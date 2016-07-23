@@ -5,7 +5,6 @@ var Location = require('./location.js');
 var CoffeespotSchema = new Schema({
   name: String,
   openNow:Boolean,
-  address: String,
   freeWifi: Boolean,
   fastWifi: Boolean,
   outlets: Boolean,
@@ -17,9 +16,13 @@ var CoffeespotSchema = new Schema({
   petFriendly: Boolean,
   parkingLot: Boolean,
   image:String,
-  _location: [Location.schema], //reference
+  _location: {
+    type: Schema.Types.ObjectId,
+    ref: 'Location'
+  }
+
+
 });
 
 var Coffeespot = mongoose.model('Coffeespot', CoffeespotSchema);
-
 module.exports = Coffeespot;

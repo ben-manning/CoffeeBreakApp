@@ -22,9 +22,13 @@ app.get('/', function homepage (req, res) {
 //JSON API Endpoints
 app.get('/api', controllers.api.index);
 
-app.get('/api/coffeespots',controllers.coffeespots.index);
+app.get('/api/coffeespots', controllers.coffeespots.index);
 
-app.get('/api/coffeespots/:coffeespot_id',controllers.coffeespots.show);
+app.get('/api/coffeespots/:coffeespot_id', controllers.coffeespots.show);
+
+app.get('/api/locations', controllers.locations.index);
+
+app.get('/api/locations/:location_id', controllers.locations.show);
 
 app.post('/api/coffeespots', controllers.coffeespots.create);
 

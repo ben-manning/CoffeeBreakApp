@@ -52,21 +52,54 @@ var coffeeSpotsList = [
     var locationsList = [
       {
         city: "san diego",
-        state: "ca",
-        zipcode: "92103",
       },
       {
         city: "san francisco",
-        state: "ca",
-        zipcode: "94102",
       },
       {
-        city: "san francisco",
-        state: "ca",
-        zipcode: "94110"
+        city: "los angeles",
       }
     ];
-//puts coffeespot in db-- the remove and create keeps seed data in db. all other entries would be refreshed followed node seed.js
+//
+// db.Location.remove({}, function(err, locations){
+//     console.log('REMOVED all locations');
+//     db.Location.create(locationsList, function(err, locations){
+//         if (err) {console.log("!!ERROR!!" + err);
+//             return;
+//           }
+//         console.log("RECREATED ALL LOCATIONS");
+//         console.log("CREATED", locations.length, "locations");
+//
+//         db.Coffeespot.remove({}, function(err, coffeespots){
+//             console.log("REMOVED all coffeespots");
+//             coffeeSpotsList.forEach(function (coffeespotData){
+//                 var coffeespot = new db.Coffeespot({
+//                     name: coffeespotData.name,
+//                     openNow: coffeespotData.openNow,
+//                     freeWifi: coffeespotData.freeWifi,
+//                     outlets: coffeespotData.outlets,
+//                     goodCoffee: coffeespotData.goodCoffee,
+//                     lively: coffeespotData.lively,
+//                     quiet: coffeespotData.quiet,
+//                     goodForGroups: coffeespotData.goodForGroups,
+//                     outdoorSeating: coffeespotData.outdoorSeating,
+//                     petFriendly: coffeespotData.petFriendly,
+//                     parkingLot: coffeespotData.parkingLot,
+//                     image: coffeespotData.image,
+//                 });
+//                 db.Coffeespot.findOne({city: coffeespotData.location}, function (err, foundLocation){
+//                     console.log("FOUND LOCATION" + foundLocation.city + "for" + coffeespot.name);
+//                     if (err) { console.log ("ERROR!" + err);
+//                   return;
+//                 }
+//                 console.log("saved" + savedCoffeespot);
+//               });
+//             });
+//         });
+//         });
+//         });
+
+
 db.Coffeespot.remove({}, function(err, savedCoffeeSpots) {
     if (err) {
         console.log("!!!! ERROR OCCURED IN REMOVAL", err);
@@ -84,11 +117,4 @@ db.Coffeespot.create(coffeeSpotsList, function(err, createdCoffeeSpots){
             if(err){return console.log("!!ERROR:" + err);}
         });
     });
-
-
-
-
-
-
-
-    });
+  });
