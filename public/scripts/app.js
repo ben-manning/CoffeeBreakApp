@@ -2,19 +2,22 @@ console.log("SANITY CHECK!");
 $(document).ready(function(){
 var template;
 var $coffeeSpotsList = $('#target');
+var allCoffeeSpots = [];
 
 //compile handlebars template:
 var source = $("#coffee-template").html();
   template = Handlebars.compile(source);
 
 //function to render all posts to views
-function render(coffeespot){
+function render(){
+    // var context = {};
     //empty existing posts from views
     $coffeeSpotsList.empty();
     //pass 'all coffeesports' into the template fxn
-    var coffeeSpotHtml = template(coffeespot);
+    var coffeeSpotHtml = template(context);
     //append html to the view
     $coffeeSpotsList.prepend(coffeeSpotHtml);
+
 }
 function handleSuccess(json) {
     allCoffeeSpots = json;
