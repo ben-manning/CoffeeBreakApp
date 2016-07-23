@@ -27,6 +27,10 @@ function create (req, res) {
     });
 }
 
+function destroy (req, res) {
+
+}
+
 
 
 
@@ -53,5 +57,6 @@ function create (req, res) {
 module.exports = {
   index: index,
   show: show,
-  create: create
+  create: create,
+  destroy: destroy
 };
