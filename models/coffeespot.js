@@ -4,7 +4,6 @@ var Location = require('./location.js');
 
 var CoffeespotSchema = new Schema({
   name: String,
-  openNow:Boolean,
   freeWifi: Boolean,
   fastWifi: Boolean,
   outlets: Boolean,
@@ -16,7 +15,7 @@ var CoffeespotSchema = new Schema({
   petFriendly: Boolean,
   parkingLot: Boolean,
   image:String,
-  _location: {
+  location: {
     type: Schema.Types.ObjectId,
     ref: 'Location'
   }

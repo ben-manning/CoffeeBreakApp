@@ -2,8 +2,10 @@ db = require('../models');
 
 //Get all coffeespots in db
 function index(req, res) {
-  db.Coffeespot.find(function (err, allCoffeeSpots){
-    if (err) {console.log("INDEX ERROR CANT FIND THIS");}
+  db.Coffeespot.find()
+  .populate('location')
+  .exec(function(err, allCoffeeSpots) {
+    if (err){console.log("INDEX ERROR CANT FIND THIS"); }
     res.json(allCoffeeSpots);
   });
 }
@@ -17,6 +19,7 @@ function create(req, res){
     res.json(coffeespot);
   });
 }
+
 //show coffeespot by id in db
 function show(req, res){
   var coffeespotId = req.params.coffeespot_id;
@@ -33,9 +36,6 @@ function destroy(req, res){
     res.json(foundCoffeespot);
   });
 }
-
-
-
 
 function update(req, res) {
   console.log('UPDATING with data', req.body);

@@ -112,7 +112,6 @@
     <div id='target'>
       <script id="coffee-template" type="text/x-handlebars-template">
         <<!--BEGINNING ROW FOR COFEE SPOT ENTRY-->>
-        {{#each coffeespots}}
         <div class="col-md-5" id='spotEntry' data-coffeespot-id=
       "{{_id}}">
           <h3>{{name}}</h3>
@@ -134,7 +133,6 @@
               <li>Parking Lot: {{parkingLot}}</li>
             </ul>
           <img class="image-responsive" src={{image}}>
-                {{/each}}
       </div>
       <button type="button" class="btn btn-secondary">Add coffee spot</button>
             </script>

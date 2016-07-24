@@ -10,12 +10,8 @@ var source = $("#coffee-template").html();
 
 //function to render all posts to views
 function render(){
-    // var context = {};
-    //empty existing posts from views
     $coffeeSpotsList.empty();
-    //pass 'all coffeesports' into the template fxn
     var coffeeSpotHtml = template(context);
-    //append html to the view
     $coffeeSpotsList.prepend(coffeeSpotHtml);
 
 }
@@ -36,27 +32,25 @@ $('#target').text("FAILED TO LOAD COFFEESPOTS");
           render(coffeespot);
       });
   }
-
-
-
-function handleDeleteCoffeespot(e) {
-    var coffeespotId = $(this).parents('.spotEntry').data('coffeespot-id');
-    var deletedContent = '/api/coffeespots/' + coffeespotId;
-    console.log("request to DELETE COFFEE SPOT ID=" + coffeespotId);
-    //DELETE ajax call
-    $.ajax({
-          url: deletedContent,
-          method: 'DELETE',
-          success: handleDeleteCoffeespot
-        });
-
-}
-
-
-
-  function onDeleteSuccess(data){
-      var deletedCoffeespotsId = data.coffeespot_id;
-      console.log("!! SUCCESS--REMOVED COFFEE SPOT:" + deletedCoffeespotsId);
-      $(deletedCoffeespotsId).remove();
-  }
+//
+// function handleDeleteCoffeespot(e) {
+//     var coffeespotId = $(this).parents('.spotEntry').data('coffeespot-id');
+//     var deletedContent = '/api/coffeespots/' + coffeespotId;
+//     console.log("request to DELETE COFFEE SPOT ID=" + coffeespotId);
+//     //DELETE ajax call
+//     $.ajax({
+//           url: deletedContent,
+//           method: 'DELETE',
+//           success: handleDeleteCoffeespot
+//         });
+//
+// }
+//
+//
+//
+//   function onDeleteSuccess(data){
+//       var deletedCoffeespotsId = data.coffeespot_id;
+//       console.log("!! SUCCESS--REMOVED COFFEE SPOT:" + deletedCoffeespotsId);
+//       $(deletedCoffeespotsId).remove();
+//   }
 });

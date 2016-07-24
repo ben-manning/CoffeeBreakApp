@@ -38,7 +38,6 @@ app.put('/api/coffeespots/:coffeespot_id', controllers.coffeespots.update);
 
 app.put('/api/locations/:location_id', controllers.locations.update);
 
-
 app.delete('/api/coffeespots/:coffeespot_id', controllers.coffeespots.destroy);
 
 app.delete('/api/locations/:location_id', controllers.locations.destroy);
