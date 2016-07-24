@@ -28,13 +28,30 @@
 
                       <button id="add" type="add" class="btn btn-danger">Add Coffee Spot</button>
     <div class="row">
-      <div id="location" class="col-md-4">
+      <div id="location" class="col-md-5">
         <h3>Find a coffee spot</h3>
         <div class='form-group'>
-          <label class='col-md-4' for='location'>Location</label>
-          <br></br>
-          <input id="city" name="city" type="text" placeholder="city" class="form-control-sm">
-          <button type="submit" class="btn btn-secondary-outline">Find</button>
+          <label class='col-md-5' for='location'>Location</label>
+
+          <div class="dropdown open">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="location" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Location
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">San Francisco</a>
+            <a class="dropdown-item" href="#">San Jose</a>
+            <a class="dropdown-item" href="#">San Diego</a>
+            <a class="dropdown-item" href="#">Los Angeles</a>
+          </div>
+        </div>
+
+  <button type="find" class="btn btn-danger">Find Coffee Spot</button>
+
+
+
+
+
+
           <br></br>
           <label class='col-md-4' for='location'>Attributes</label>
           <br></br>
@@ -104,16 +121,18 @@
             </div>
           </div>
         </form>
-      </div>
-    </div>
 
+      </div>
+
+    </div>
 
     <div class="col-md-6 col-md-offset-5">
       <h2>Coffee spots</h2>
+
       <div id="target">
         <script id="coffeespot-template" type="text/x-handlebars-template">
           <h3> {{name}} </h3>
-          <h4>{{Location}}</h4>
+          <h4>{{location.city}}</h4>
           <img class="image-responsive" src="{{image}}">
           <ul>
             <li>Free wifi: {{freeWifi}} </li>

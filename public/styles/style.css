@@ -8,12 +8,17 @@ background-size: cover;
   position: fixed;
 }
 
+.dropdown {
+    position: relative;
+}
+
 body {
     background-color: light gray;
 }
 
 h2 {
-    text-align: center;
+    text-align: left;
+    font-weight: bold;
 }
 
 #spotEntry {
@@ -32,14 +37,18 @@ h2 {
   position: absolute;
 }
 
-#add {
-  margin-left: 700px;
+.col-md-5{
+    position: fixed;
 }
-
 
 .col-md-4{
   position: fixed;
 
+}
+
+
+#add {
+  margin-left: 700px;
 }
 
 #attribute-one{
@@ -67,7 +76,7 @@ h2 {
 }
 
 .buttons {
-    margin-left: 250px;
+    margin-left: 200px;
 
 }
 

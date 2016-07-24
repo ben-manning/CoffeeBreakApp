@@ -31,6 +31,8 @@ app.get('/api/locations', controllers.locations.index);
 app.get('/api/locations/:location_id', controllers.locations.show);
 //create new coffeespot post by id
 app.post('/api/coffeespots', controllers.coffeespots.create);
+//create new locations
+app.post('/api/locations', controllers.locations.create);
 //edit coffeespot post by id
 app.put('/api/coffeespots/:coffeespot_id', controllers.coffeespots.update);
 //edit location by id
@@ -41,7 +43,7 @@ app.delete('/api/coffeespots/:coffeespot_id', controllers.coffeespots.destroy);
 app.delete('/api/locations/:location_id', controllers.locations.destroy);
 
 //get all coffeespots within location id
-app.get('/api/locations/:location_id/coffeespots', controllers.coffeespots.coffeespotsByLocId);
+app.get('/api/locations/:location_id', controllers.coffeespots.coffeespotsByLocId);
 
 
 /* SERVER */

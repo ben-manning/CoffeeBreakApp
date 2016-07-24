@@ -9,16 +9,16 @@ function index(req, res) {
     res.json(allCoffeeSpots);
   });
 }
-
-//create coffeespot in db
-function create(req, res){
-  // return console.log('body', req.body);
-  db.Coffeespot.create(req.body, function(err, coffeespot){
-    if (err) {console.log("ERROR!", err);}
-    console.log(coffeespot);
-    res.json(coffeespot);
-  });
-}
+//
+// //create coffeespot in db
+// function create(req, res){
+//   // return console.log('body', req.body);
+//   db.Coffeespot.create(req.body, function(err, coffeespot){
+//     if (err) {console.log("ERROR!", err);}
+//     console.log(coffeespot);
+//     res.json(coffeespot);
+//   });
+// }
 
 //show coffeespot by id in db
 function show(req, res){
@@ -60,7 +60,7 @@ function update(req, res) {
   });
 }
 
-//find coffeespots by location id
+//find coffeespots by location_id
 function coffeespotsByLocId(req, res){
     var location_id = req.params.location_id;
     db.Location.findById(location_id, function(err, city){
@@ -77,6 +77,43 @@ function coffeespotsByLocId(req, res){
         });
     });
 }
+
+//create coffeespot associated with location_id
+function create(req, res) {
+  var location_id = req.params.location_id;
+  var newCoffeespot = new db.Coffeespot ({
+    name : req.body.name,
+    freeWifi : req.body.freeWifi,
+    fastWifi : req.body.fastWifi,
+    outlets : req.body.outlets,
+    goodCoffee : req.body.goodCoffee,
+    lively : req.body.lively,
+    quiet : req.body.quiet,
+    goodForGroups : req.body.goodForGroups,
+    petFriendly : req.body.petFriendly,
+    parkingLot : req.body.parkingLot,
+    image : req.body.image
+  });
+  db.Location.findById(location_id, function(err, location){
+      if (err) {
+          return console.log("!!ERROR could not find location", err);
+      }
+      console.log(location_id + "FOUND!");
+      newCoffeespot.location = location;
+      //saves new coffeespot to db
+      newCoffeespot.save(function(err, coffeespot){
+          if (err) {
+              return console.log("ERROR. Save Error:" + err);
+          }
+          console.log("SUCCESS! Saved new coffeespot:" + coffeespot.location);
+          //We need to push this back into the db
+          res.json(coffeespot);
+      });
+  });
+}
+
+
+
 
 module.exports = {
   index: index,

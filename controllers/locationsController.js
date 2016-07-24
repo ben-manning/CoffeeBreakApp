@@ -20,7 +20,7 @@ function show (req, res) {
 }
 
 function create (req, res) {
-    db.Locaton.create(req.body, function(err, location){
+    db.Location.create(req.body, function(err, location){
         if (err) {console.log("ERROR!" + err); }
         console.log(location);
         res.json(location);
