@@ -31,8 +31,10 @@
           <label class='col-md-4' for='location'>Location</label>
           <input id="city" name="city" type="text" placeholder="city" class="form-control-sm">
           <button type="submit" class="btn btn-secondary-outline">Find</button>
+          <br></br>
           <label class='col-md-4' for='location'>Attributes</label>
-          <div class='col-md-4'>
+          <br></br>
+          <div id="attribute-one"class='col-md-4'>
             <div class="checkbox">
               <label>
                 <input type="checkbox" value="openNow">
@@ -64,7 +66,7 @@
               </label>
             </div>
           </div>
-          <div class='col-md-4'>
+          <div id="attribute-two" class='col-md-4'>
 
             <div class="checkbox">
               <label>
@@ -101,11 +103,13 @@
       </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 col-md-offset-1">
       <h2>Coffee spots</h2>
       <div id="target">
-        <script id="coffeespots" type="text/x-handlebars-template">
+        <script id="coffeespot-template" type="text/x-handlebars-template">
+          <h3> {{name}} </h3>
           <h4>{{Location}}</h4>
+          <img class="image-responsive" src="{{image}}">
           <ul>
             <li>Free wifi: {{freeWifi}} </li>
             <li>Fast wifi: {{fastWifi}} </li>
@@ -118,10 +122,10 @@
             <li>Pet Friendly: {{petFriendly}}</li>
             <li>Parking Lot:  {{parkingLot}}</li>
           </ul>
-          <img class="image-responsive" src="{{image}}">
         </div>
       </script>
     </div>
+
   </div>
 
 

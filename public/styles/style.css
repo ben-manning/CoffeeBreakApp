@@ -11,9 +11,6 @@ body {
     background-color: light gray;
 }
 
-.filter-column {
-}
-
 #spotEntry {
   min-height:100px;
   width:600px;
@@ -26,8 +23,21 @@ body {
     padding-top: 10px;
 }
 
-.col-md-5{
+.col-md-6{
   border-style: solid;
+}
+
+.col-md-4{
+  border-style: solid;
+}
+
+#attribute-one{
+
+
+}
+
+#attribute-two{
+    margin-left: 60px;
 }
 
 .recommendations {
@@ -46,8 +56,7 @@ body {
 }
 
 .image {
-    float: inherit;;
-    margin-left: 70px;
+
 }
 
 .container {

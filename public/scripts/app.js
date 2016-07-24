@@ -6,16 +6,17 @@ var allCoffeeSpots = [];
 $(document).ready(function(){
   $.get('/api/coffeespots', onSuccess);
 });
+
 function renderCoffeespot(coffeespot) {
-    var coffeespotHtml = $('#coffeespots').html();
+    var coffeespotHtml = $('#coffeespot-template').html();
     var coffeespotTemplate = Handlebars.compile(coffeespotHtml);
     var html = coffeespotTemplate(coffeespot);
-    $('#skatespot').prepend(html);
+    $('#target').prepend(html);
 }
 function onSuccess(json) {
   console.log('FOUND ALL COFFEESPOTS');
   json.forEach(function(coffeespot) {
     renderCoffeespot(coffeespot);
-    console.log("SUCCESS rendered to page:" + coffeespot);
+    console.log("SUCCESS rendered the following coffeespots to the page:" + coffeespot);
   });
 }

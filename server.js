@@ -30,7 +30,7 @@ app.get('/api/locations', controllers.locations.index);
 
 app.get('/api/locations/:location_id', controllers.locations.show);
 
-app.post('/api/locations', controllers.locations.create);
+app.post('/api/coffeespots/:coffeespot_id/locations', controllers.locations.create);
 
 app.post('/api/coffeespots', controllers.coffeespots.create);
 
