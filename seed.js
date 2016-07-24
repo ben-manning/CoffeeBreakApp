@@ -12,8 +12,9 @@ var coffeeSpotsList = [
     outdoorSeating: true ,
     petFriendly: true,
     parkingLot: false,
-    image:"/images/defaultImg.png",
-    location: 'san diego'
+    image:"http://www.sandiegotown.com/images/sandiegotown/event/feature/article/LRG_Filter.jpg",
+    location: 'san diego',
+    link:"https://www.yelp.com/biz/filter-coffee-house-san-diego"
   },
 
   {
@@ -28,7 +29,7 @@ var coffeeSpotsList = [
     outdoorSeating: false,
     petFriendly: false,
     parkingLot: false,
-    image:"/images/defaultImg.png",
+    image:"http://farm4.static.flickr.com/3435/3818488866_77c164ee22.jpg",
     location: 'san francisco'
   },
 
@@ -44,7 +45,7 @@ var coffeeSpotsList = [
     outdoorSeating: false,
     petFriendly: false,
     parkingLot: false,
-    image:"/images/defaultImg.png",
+    image:"http://www.missionmission.org/wp-content/uploads/2009/05/3526747032_d16d22a560.jpg",
     location: 'san francisco'
   }];
 
@@ -57,6 +58,9 @@ var coffeeSpotsList = [
     },
     {
       city: "los angeles",
+    },
+    {
+      city: "san jose"
     }
   ];
 
@@ -93,13 +97,13 @@ var coffeeSpotsList = [
           function(err, foundLocation) {
             console.log("FOUND LOCATION" + foundLocation + " for ");
             if (err) {console.log ("ERROR!" + err);}
-            
+
             coffeespot.location = foundLocation;
             coffeespot.save(function(err, savedCoffeespot){
               if (err) {
                 return console.log("ERRRROR!", err);
               }
-              console.log("saved" + savedCoffeespot);
+              console.log("SAVED COFFEE SPOT" + savedCoffeespot);
             });
 
           });
@@ -109,23 +113,3 @@ var coffeeSpotsList = [
       });
     });
   });
-
-
-  // db.Coffeespot.remove({}, function(err, savedCoffeeSpots) {
-  //     if (err) {
-  //         console.log("!!!! ERROR OCCURED IN REMOVAL", err);
-  //       } else {
-  //         console.log("!!! Removed ALL coffeespot entries and left seed data only!!");
-  //     }
-  // db.Coffeespot.create(coffeeSpotsList, function(err, createdCoffeeSpots){
-  //     if (err) {
-  //       return console.log("!!ERROR!!, err");}
-  //     console.log("SUCCESS!!! CREATED createdCoffeeSpots:" + createdCoffeeSpots);
-  // });
-  //     coffeeSpotsList.forEach(function(coffeespot){
-  //         var searchParam = {name: coffeespot.name};
-  //         db.Coffeespot.findOne(searchParam, function(err, album){
-  //             if(err){return console.log("!!ERROR:" + err);}
-  //         });
-  //     });
-  //   });

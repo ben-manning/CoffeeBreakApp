@@ -21,26 +21,27 @@ app.get('/', function homepage (req, res) {
 
 //JSON API Endpoints
 app.get('/api', controllers.api.index);
-
+//get all coffeespots
 app.get('/api/coffeespots', controllers.coffeespots.index);
-
+//get all coffeespots by id
 app.get('/api/coffeespots/:coffeespot_id', controllers.coffeespots.show);
-
+//get all locations
 app.get('/api/locations', controllers.locations.index);
-
+//get all locations by id
 app.get('/api/locations/:location_id', controllers.locations.show);
-
-app.post('/api/coffeespots/:coffeespot_id/locations', controllers.locations.create);
-
+//create new coffeespot post by id
 app.post('/api/coffeespots', controllers.coffeespots.create);
-
+//edit coffeespot post by id
 app.put('/api/coffeespots/:coffeespot_id', controllers.coffeespots.update);
-
+//edit location by id
 app.put('/api/locations/:location_id', controllers.locations.update);
-
+//delete coffeespots by id
 app.delete('/api/coffeespots/:coffeespot_id', controllers.coffeespots.destroy);
-
+//delete locations by id
 app.delete('/api/locations/:location_id', controllers.locations.destroy);
+
+//get all coffeespots within location id
+app.get('/api/locations/:location_id/coffeespots', controllers.coffeespots.coffeespotsByLocId);
 
 
 /* SERVER */

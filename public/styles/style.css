@@ -4,17 +4,22 @@ background-size: cover;
 
 }
 .jumbotron .container {
-  height: 350px;
+  height: 400px;
+  position: fixed;
 }
 
 body {
     background-color: light gray;
 }
 
+h2 {
+    text-align: center;
+}
+
 #spotEntry {
   min-height:100px;
   width:600px;
-  margin-left:10px;
+  margin-left:20px;
   background-color: red;
 }
 
@@ -24,11 +29,17 @@ body {
 }
 
 .col-md-6{
-  border-style: solid;
+  position: absolute;
 }
+
+#add {
+  margin-left: 700px;
+}
+
 
 .col-md-4{
   position: fixed;
+
 }
 
 #attribute-one{
@@ -37,7 +48,7 @@ body {
 }
 
 #attribute-two{
-    margin-left: 60px;
+    margin-left: 130px;
 }
 
 .recommendations {
@@ -55,10 +66,15 @@ body {
 
 }
 
-.image {
+.buttons {
+    margin-left: 250px;
 
 }
 
 .container {
     border-style: dashed;;
+}
+
+img {
+    border-radius: 10%;
 }

@@ -58,18 +58,31 @@ function update(req, res) {
       res.json(savedCoffeespot);
     });
   });
-
-
 }
 
+//find coffeespots by location id
+function coffeespotsByLocId(req, res){
+    var location_id = req.params.location_id;
+    db.Location.findById(location_id, function(err, city){
+        if (err) {
+            console.log(err);
+        }
+        console.log(location_id);
 
-
-
+        db.Coffeespot.find({location: location_id}, function(err, cityCoffeespots){
+            if (err) {
+                console.log(cityCoffeespots + "found with" + location_id);
+            }
+            res.json(cityCoffeespots);
+        });
+    });
+}
 
 module.exports = {
   index: index,
   show: show,
   create: create,
   destroy: destroy,
-  update: update
+  update: update,
+  coffeespotsByLocId: coffeespotsByLocId
 };

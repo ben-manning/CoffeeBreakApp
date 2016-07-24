@@ -25,10 +25,14 @@
         <p> Your coffee spot hub. </p>
       </div>
     </div>
+
+                      <button id="add" type="add" class="btn btn-danger">Add Coffee Spot</button>
     <div class="row">
-      <div class="col-md-4">Find a coffee spot
+      <div id="location" class="col-md-4">
+        <h3>Find a coffee spot</h3>
         <div class='form-group'>
           <label class='col-md-4' for='location'>Location</label>
+          <br></br>
           <input id="city" name="city" type="text" placeholder="city" class="form-control-sm">
           <button type="submit" class="btn btn-secondary-outline">Find</button>
           <br></br>
@@ -66,7 +70,7 @@
               </label>
             </div>
           </div>
-          <div id="attribute-two" class='col-md-4'>
+          <div id="attribute-two" class='col-md-4 '>
 
             <div class="checkbox">
               <label>
@@ -103,6 +107,7 @@
       </div>
     </div>
 
+
     <div class="col-md-6 col-md-offset-5">
       <h2>Coffee spots</h2>
       <div id="target">
@@ -123,8 +128,10 @@
             <li>Parking Lot:  {{parkingLot}}</li>
           </ul>
           <span class="buttons">
+                      <a href="{{link}}">YELP</a>
             <button type="edit" class="btn btn-secondary">Edit</button>
             <button type="delete" class="btn btn-danger">Delete</button>
+
           </span>
         </div>
       </script>
