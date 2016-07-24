@@ -25,128 +25,105 @@
         <p> Your coffee spot hub. </p>
       </div>
     </div>
-    <!--Beginning of Rows-->
-    <div class='col-md-5 col-md-offset-2' id='filterForm'>
-      <form class='form-vertical'>
-        <!--text input-->
+    <div class="row">
+      <div class="col-md-4">Find a coffee spot
         <div class='form-group'>
           <label class='col-md-4' for='location'>Location</label>
-          <div class="col-md-4">
-            <input id="city" name="city" type="text" placeholder="city" class="form-control input-md">
+          <input id="city" name="city" type="text" placeholder="city" class="form-control-sm">
+          <button type="submit" class="btn btn-secondary-outline">Find</button>
+          <label class='col-md-4' for='location'>Attributes</label>
+          <div class='col-md-4'>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="openNow">
+                Open now
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="freeWifi">
+                Free wifi
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="fastWifi">
+                Fast wifi
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="outlets">
+                Power Outlets
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="goodCoffee">
+                Good Coffee
+              </label>
+            </div>
           </div>
+          <div class='col-md-4'>
 
-          <div class="form-group">
-            <button type="submit" class="btn btn-secondary-outline">Find</button>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="lively">
+                Lively atmosphere
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="quiet">
+                Quiet atmosphere
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="goodForGroups">
+                Good for groups
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="petFriendly">
+                Pet Friendly
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="parking">
+                Parking lot
+              </label>
+            </div>
           </div>
-        </div>
-        <label class='col-md-4' for='location'>Attributes</label>
-        <div class='col-md-2'>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="openNow">
-              Open now
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="freeWifi">
-              Free wifi
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="fastWifi">
-              Fast wifi
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="outlets">
-              Power Outlets
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="goodCoffee">
-              Good Coffee
-            </label>
-          </div>
-        </div>
-        <div class='col-md-2'>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="lively">
-              Lively atmosphere
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="quiet">
-              Quiet atmosphere
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="goodForGroups">
-              Good for groups
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="petFriendly">
-              Pet Friendly
-            </label>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="parking">
-              Parking lot
-            </label>
-          </div>
-        </div>
+        </form>
       </div>
-    </form>
-    <div>
     </div>
 
-    <div id='target'>
-      <script id="coffee-template" type="text/x-handlebars-template">
-        <<!--BEGINNING ROW FOR COFEE SPOT ENTRY-->>
-        <div class="col-md-5" id='spotEntry' data-coffeespot-id=
-      "{{_id}}">
-          <h3>{{name}}</h3>
-          <button type="button" id='update' class="btn btn-primary-outline">Edit</button>
-          <button type="button" id='delete' class="btn btn-primary-outline">Delete</button>
-
-          <div class='col-md-4'>
-            <h4>Location</h4>
-            <ul>
-              <li>free wifi: {{freeWifi}}</li>
-              <li>fast wifi: {{fastWifi}}</li>
-              <li>Outlets: {{outlets}}</li>
-              <li>Good Coffee: {{goodCoffee}}</li>
-              <li>Lively Atmosphere: {{lively}}</li>
-              <li>Quiet Atmosphere: {{quiet}}</li>
-              <li>Good for Groups: {{goodForGroups}}</li>
-              <li>Outoor Seating: {{outdoorSeating}}</li>
-              <li>Pet Friendly: {{petFriendly}}</li>
-              <li>Parking Lot: {{parkingLot}}</li>
-            </ul>
-          <img class="image-responsive" src={{image}}>
-      </div>
-      <button type="button" class="btn btn-secondary">Add coffee spot</button>
-            </script>
+    <div class="col-md-6">
+      <h2>Coffee spots</h2>
+      <div id="target">
+        <script id="coffeespots" type="text/x-handlebars-template">
+          <h4>{{Location}}</h4>
+          <ul>
+            <li>Free wifi: {{freeWifi}} </li>
+            <li>Fast wifi: {{fastWifi}} </li>
+            <li>Power Outlets: {{outlets}} </li>
+            <li>Good Coffee: {{goodCoffee}} </li>
+            <li>Lively Atmosphere: {{lively}} </li>
+            <li>Quiet Atmosphere: {{quiet}}</li>
+            <li>Good for Groups: {{goodForGroups}}</li>
+            <li>Outoor Seating: {{outdoorSeating}}</li>
+            <li>Pet Friendly: {{petFriendly}}</li>
+            <li>Parking Lot:  {{parkingLot}}</li>
+          </ul>
+          <img class="image-responsive" src="{{image}}">
+        </div>
+      </script>
     </div>
   </div>
-</div>
-</div>
 
-
-
-
-
-
-</section>
 
 </body>
 </html>
