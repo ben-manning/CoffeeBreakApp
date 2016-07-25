@@ -85,6 +85,8 @@ img {
   border-radius: 10%;
   align-items: center;
   border-style: groove;
+  width: 500px;
+  height: 300px;
 }
 
 ul {

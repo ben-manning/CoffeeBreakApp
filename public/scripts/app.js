@@ -65,9 +65,21 @@ $(document).ready(function(){
     console.log($(this).val());
   });
 
+  //ADD NEW COFFEE SPOT
+  $("form").on('submit', function(e){
+      e.preventDefault();
+      console.log("CLICKED ADD BUTTON!");
+  });
+
+
+
+
+
+
+
+
   //DELETE
   $coffeespotsList.on('click', '.deleteBtn', function(e){
-    console.log("CLICKED Delete button!!");
     e.preventDefault();
     $.ajax({
       method: 'DELETE',
@@ -85,5 +97,7 @@ $(document).ready(function(){
   function deleteCoffeespotError() {
     console.log("DELETE COFFEESPOT ERROR!");
   }
+
+
 
 });

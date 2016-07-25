@@ -31,9 +31,9 @@
       <div class="col-md-5">
         <div class='form-group'>
         <h3>Add a Coffee Spot</h3>
-            <form>
-            <input id="nameInput" name="name" type="text" placeholder="Name of coffee spot" class="form-control input-md" required="">
-            <input id="locationInput" name="location" type="text" placeholder="City e.g: san francisco" class="form-control input-md" required="">
+            <form class="form-vertical">
+            <input id="nameInput" name="name" type="text" placeholder="Name of coffee spot" class="form-control input-md">
+            <input id="locationInput" name="location" type="text" placeholder="City e.g: san francisco" class="form-control input-md">
           <br></br>
           <label class='col-md-4' for='location'>Attributes</label>
           <br></br>
@@ -69,7 +69,7 @@
               </label>
             </div>
           </div>
-        <button type="add" id="addCoffeespot" class="btn btn-secondary">Add a Coffee Spot!</button>
+        <button type="submit" id="addCoffeespot" class="btn btn-secondary">Add a Coffee Spot!</button>
         </form>
       </div>
     </div>
@@ -92,7 +92,7 @@
             <li>Good for Groups: {{goodForGroups}}</li>
             <li>Parking Available: {{parkingLot}}</li>
           </ul>
-          <div class="buttons">
+          <div>
             <a href="{{link}}">Yelp</a>
             <button type="edit" class="btn btn-secondary">Edit</button>
             <button type="delete" class="deleteBtn btn-danger" data-id="{{_id}}">Delete</button>
