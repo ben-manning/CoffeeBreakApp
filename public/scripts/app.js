@@ -68,7 +68,14 @@ $(document).ready(function(){
   //ADD NEW COFFEE SPOT
   $("form").on('submit', function(e){
       e.preventDefault();
-      console.log("CLICKED ADD BUTTON!");
+      var formData = $(this).serialize();
+      console.log("formData:", formData);
+      // $.ajax({
+      //     method: 'POST',
+      //     url: '/api/coffeespots',
+      //     success: addCoffeespotSuccess,
+      //     error: addCoffeespotError
+      // });
   });
 
 
