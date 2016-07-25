@@ -26,26 +26,20 @@ $.get('/api/coffeespots', onSuccess);
   $('#freeWifiBox').change(function(){
 
     if($(this).attr('checked')){
-          $(this).val('false');
+          $(this).val('TRUE');
      }else{
-          $(this).val('true');
+          $(this).val('FALSE');
      }
     alert($(this).val());
 
 });
-
-
-
-
-
-
 
 //DELETE
 $coffeespotsList.on('click', '.deleteBtn', function(){
     console.log("CLICKED Delete button!!");
     $.ajax({
         method: 'DELETE',
-        url: '/api/coffeespots/' + $(this).attr('data-coffeespot-id'),
+        url: '/api/coffeespots/' + $(this).attr('data-id'),
         success: deleteCoffeespotSuccess,
         error: deleteCoffeespotError
     });

@@ -80,7 +80,7 @@
       <h2>Coffee Spots</h2>
       <div id="target">
         <script id="coffeespot-template" type="text/x-handlebars-template">
-          <div data-coffeespot-id="{{coffeespot._id}}">
+          <div data-id="{{_id}}">
           <h3> {{name}} </h3>
           <h4>{{location.city}}</h4>
           <img class="image-responsive" src="{{image}}">
@@ -93,7 +93,7 @@
           <span class="buttons">
             <a href="{{link}}">Yelp</a>
             <button type="edit" class="btn btn-secondary">Edit</button>
-            <button type="delete" class="deleteBtn btn-danger">Delete</button>
+            <button type="delete" class="deleteBtn btn-danger" data-id="{{_id}}">Delete</button>
           </span>
           </script>
         </div>

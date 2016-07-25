@@ -32,7 +32,7 @@ var coffeeSpotsList = [
     image:"http://www.missionmission.org/wp-content/uploads/2009/05/3526747032_d16d22a560.jpg",
     location: 'San Francisco',
     link:"https://www.yelp.com/biz/haus-coffee-san-francisco"
-  }
+  },
 ];
 
   var locationsList = [
