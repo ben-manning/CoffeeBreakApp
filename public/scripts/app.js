@@ -56,7 +56,7 @@ $(document).ready(function(){
     }
     alert($(this).val());
   });
-  $('#parkingLot').change(function(){
+  $('#parkingLotBox').change(function(){
     if($(this).attr('checked')){
       $(this).val('false');
     }else{
