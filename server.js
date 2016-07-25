@@ -4,14 +4,11 @@ console.log("SANITY CHECK- I'M WORKING");
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+var controllers = require('./controllers');
 
 app.use(express.static(__dirname + '/public'));
-
 app.use('/vendor', express.static(__dirname + '/bower_components'));
-
 app.use(bodyParser.urlencoded({ extended: true }));
-
-var controllers = require('./controllers');
 
 //ROUTES
 //HTML Endpoints
@@ -46,8 +43,6 @@ app.put('/api/locations/:location_id', controllers.locations.update);
 app.delete('/api/coffeespots/:coffeespot_id', controllers.coffeespots.destroy);
 //delete locations by id
 app.delete('/api/locations/:location_id', controllers.locations.destroy);
-
-
 
 /* SERVER */
 app.listen(process.env.PORT || 3000, function () {

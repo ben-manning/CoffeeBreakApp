@@ -9,16 +9,6 @@ function index(req, res) {
     res.json(allCoffeeSpots);
   });
 }
-//
-// //create coffeespot in db
-// function create(req, res){
-//   // return console.log('body', req.body);
-//   db.Coffeespot.create(req.body, function(err, coffeespot){
-//     if (err) {console.log("ERROR!", err);}
-//     console.log(coffeespot);
-//     res.json(coffeespot);
-//   });
-// }
 
 //show coffeespot by id in db
 function show(req, res){
@@ -29,6 +19,7 @@ function show(req, res){
     res.json(foundCoffeespot);
   });
 }
+
 function destroy(req, res){
   db.Coffeespot.findOneAndRemove({_id: req.params.coffeespot_id}, function(err, foundCoffeespot){
     if (err) {return console.log("ERROR DELETING COFFEEESPOT");}

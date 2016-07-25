@@ -1,37 +1,51 @@
 console.log("SANITY CHECK!");
+var template;
+var $coffeespotsList;
+var allCoffeeSpots = [];
 
 $(document).ready(function(){
-  $.get('/api/coffeespots', onSuccess);
+
+$coffeespotsList = $('#target');
+
+$.get('/api/coffeespots', onSuccess);
+//handlebars
+  function renderCoffeespot(coffeespot) {
+    var coffeespotHtml = $('#coffeespot-template').html();
+    var coffeespotTemplate = Handlebars.compile(coffeespotHtml);
+    var html = coffeespotTemplate(coffeespot);
+    $('#target').prepend(html);
+  }
+  function onSuccess(json) {
+    console.log('FOUND ALL COFFEESPOTS');
+    json.forEach(function(coffeespot) {
+      renderCoffeespot(coffeespot);
+      console.log("SUCCESS rendered the following coffeespots to the page:" + coffeespot);
+    });
+  }
+
+$coffeespotsList.on('click', '.deleteBtn', function(){
+    console.log("CLICKED Delete button!!");
 });
 
-$('.dropdown-toggle').dropdown();
-//handlebars
-function renderCoffeespot(coffeespot) {
-  var coffeespotHtml = $('#coffeespot-template').html();
-  var coffeespotTemplate = Handlebars.compile(coffeespotHtml);
-  var html = coffeespotTemplate(coffeespot);
-  $('#target').prepend(html);
-}
-function onSuccess(json) {
-  console.log('FOUND ALL COFFEESPOTS');
-  json.forEach(function(coffeespot) {
-    renderCoffeespot(coffeespot);
-    console.log("SUCCESS rendered the following coffeespots to the page:" + coffeespot);
-  });
+
+//when delete coffeespot button is clicked:
+function handleDeleteCoffeespot(e){
+    console.log("Button clicked!");
 }
 
-function handleDeleteCoffeespotClick(event) {
-    var coffeespotId = $(this).parents('.coffeespot').data('coffeespot-id');
-    console.log("Someone wants to delete coffee spot id =" + coffeespotId);
-    $.ajax({
-        url: '/api/coffeespots/' + coffeespotId,
-        method: "DELETE",
-        success: handleDeleteCoffeespotSuccess
-    });
-}
-//callback DELETE function /api/coffeespots/:coffeespots_Id
-function handleDeleteCoffeespotSuccess(data) {
-    var deletedCoffeespotId = data._id;
-    console.log("REMOVING THE FOLLOWING COFFEESPOTS FROM PAGE:" + deletedCoffeespotId);
-    $('div[data-coffeespot-id=' + deletedCoffeespotId + ']').remove();
-}
+  function deleteCoffeespotSuccess(json){
+      var coffeespot = json;
+      var coffeespotId = coffeespot._id;
+      //find coffeespot entry with correct ID and remove from coffeespots array
+      for(var index = 0; index < allCoffeeSpots.length; index++){
+        if(allCoffeespots[index]._id === coffeespotId) {
+            allCoffeespots.splice(index, 1);
+            break;
+        }
+      }
+      render(json);
+  }
+
+
+$('.dropdown-toggle').dropdown();
+});

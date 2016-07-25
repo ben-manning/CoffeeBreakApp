@@ -8,7 +8,7 @@ var coffeeSpotsList = [
     goodForGroups: true ,
     outdoorSeating: true ,
     image:"http://www.sandiegotown.com/images/sandiegotown/event/feature/article/LRG_Filter.jpg",
-    location: 'san diego',
+    location: 'San Diego',
     link:"https://www.yelp.com/biz/filter-coffee-house-san-diego"
   },
 
@@ -19,7 +19,8 @@ var coffeeSpotsList = [
     goodCoffee: true,
     goodForGroups: true,
     image:"http://farm4.static.flickr.com/3435/3818488866_77c164ee22.jpg",
-    location: 'san francisco'
+    location: 'San Francisco',
+    link:"https://www.yelp.com/biz/ritual-coffee-roasters-san-francisco"
   },
 
   {
@@ -29,21 +30,33 @@ var coffeeSpotsList = [
     goodCoffee: true,
     goodForGroups: true,
     image:"http://www.missionmission.org/wp-content/uploads/2009/05/3526747032_d16d22a560.jpg",
-    location: 'san francisco'
-  }];
+    location: 'San Francisco',
+    link:"https://www.yelp.com/biz/haus-coffee-san-francisco"
+  },
+  {
+    name: "Another Cafe",
+    freeWifi: true,
+    outlets: true,
+    goodCoffee: true,
+    goodForGroups: false,
+    image:"/images/defaultImg.png",
+    location: 'San Francisco',
+    link:"https://www.yelp.com/biz/another-cafe-san-francisco"
+  }
+];
 
   var locationsList = [
     {
-      city: "san diego",
+      city: "San Diego",
     },
     {
-      city: "san francisco",
+      city: "San Francisco",
     },
     {
-      city: "los angeles",
+      city: "Los Angeles",
     },
     {
-      city: "san jose"
+      city: "San Jose"
     }
   ];
 
@@ -63,17 +76,13 @@ var coffeeSpotsList = [
         var coffeespot = new db.Coffeespot({
 
           name: coffeespotData.name,
-          openNow: coffeespotData.openNow,
           freeWifi: coffeespotData.freeWifi,
           outlets: coffeespotData.outlets,
           goodCoffee: coffeespotData.goodCoffee,
-          lively: coffeespotData.lively,
-          quiet: coffeespotData.quiet,
           goodForGroups: coffeespotData.goodForGroups,
           outdoorSeating: coffeespotData.outdoorSeating,
-          petFriendly: coffeespotData.petFriendly,
-          parkingLot: coffeespotData.parkingLot,
-          image: coffeespotData.image,
+          image: coffeespotData.image
+
         });
         console.log(coffeespotData);
         db.Location.findOne({city: coffeespotData.location},

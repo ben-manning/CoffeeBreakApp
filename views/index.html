@@ -26,10 +26,10 @@
       </div>
     </div>
 
-    <button id="add" type="add" class="btn btn-danger">Add Coffee Spot</button>
+<div class="container-fluid">
     <div class="row">
-      <div id="location" class="col-md-5">
-        <h3>Find a coffee spot</h3>
+      <div class="col-md-5">
+        <h3>Find a Coffee Spot</h3>
         <div class='form-group'>
           <label class='col-md-5' for='location'>Location</label>
 <br></br>
@@ -39,16 +39,10 @@
               <option>San Jose</option>
               <option>Los Angeles</option>
             </select>
-
-
-
-
-
-
-
           <br></br>
           <label class='col-md-4' for='location'>Attributes</label>
           <br></br>
+          <form>
           <div id="attribute-one"class='col-md-4'>
             <div class="checkbox">
               <label>
@@ -79,15 +73,14 @@
               <button type="find" class="btn btn-danger">Find Coffee Spot</button>
           </div>
         </form>
-
-
+        <button type="add" id="addCoffeespot" class="btn btn-secondary">Add a Coffee Spot</button>
       </div>
     </div>
-
-
+  </div>
+</div>
+<div class="container-fluid">
     <div class="col-md-6 col-md-offset-5">
-      <h2>Coffee spots</h2>
-
+      <h2>Coffee Spots</h2>
       <div id="target">
         <script id="coffeespot-template" type="text/x-handlebars-template">
           <div data-coffeespot-id="{{_id}}">
@@ -103,15 +96,12 @@
           <span class="buttons">
             <a href="{{link}}">Yelp</a>
             <button type="edit" class="btn btn-secondary">Edit</button>
-            <button id="deleteBtn" type="delete" class="btn btn-danger" data-id={{_id}}>Delete</button>
+            <button type="delete" class="deleteBtn btn-danger" data-id={{_id}}>Delete</button>
           </span>
           </script>
         </div>
         </div>
     </div>
-
   </div>
-
-
 </body>
 </html>

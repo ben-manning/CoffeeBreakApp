@@ -9,11 +9,12 @@ var CoffeespotSchema = new Schema({
   goodCoffee: Boolean,
   goodForGroups: Boolean,
   image:String,
+  link: String,
   location: {
     type: Schema.Types.ObjectId,
     ref: 'Location'
   },
-  link: String,
+
 });
 
 var Coffeespot = mongoose.model('Coffeespot', CoffeespotSchema);
