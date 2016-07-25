@@ -29,48 +29,42 @@
 <div class="container-fluid">
     <div class="row">
       <div class="col-md-5">
-        <h3>Add a Coffee Spot</h3>
         <div class='form-group'>
-                    <form>
-        <!--DROPDOWN  <select class="form-control">
-              <option>San Francisco</option>
-              <option>San Diego</option>
-              <option>San Jose</option>
-              <option>Los Angeles</option>
-            </select>-->
+        <h3>Add a Coffee Spot</h3>
+            <form>
             <input id="nameInput" name="name" type="text" placeholder="Name of coffee spot" class="form-control input-md" required="">
-            <input id="locationInput" name="location" type="text" placeholder="City" class="form-control input-md" required="">
+            <input id="locationInput" name="location" type="text" placeholder="City e.g: san francisco" class="form-control input-md" required="">
           <br></br>
           <label class='col-md-4' for='location'>Attributes</label>
+          <br></br>
           <div id="attribute-one"class='col-md-4'>
-            <br></br>
             <div class="checkbox">
               <label>
-                <input type="checkbox" name="freeWifi" id="freeWifiBox" value="false">
+                <input type="checkbox" name="freeWifi" id="freeWifiBox" value="">
                 Free wifi
               </label>
             </div>
             <div class="checkbox">
               <label>
-                <input type="checkbox" name="outlets" id="outletsBox" value="false">
+                <input type="checkbox" name="outlets" id="outletsBox" value="">
                 Power Outlets
               </label>
             </div>
             <div class="checkbox">
               <label>
-                <input type="checkbox" name="goodCoffee" id="goodCoffeeBox" value="goodCoffee">
+                <input type="checkbox" name="goodCoffee" id="goodCoffeeBox" value="">
                 Good Coffee
               </label>
             </div>
             <div class="checkbox">
               <label>
-                <input type="checkbox" name="goodForGroups" id="goodForGroupsBox" value="goodForGroups">
+                <input type="checkbox" name="goodForGroups" id="goodForGroupsBox" value="">
                 Good for groups
               </label>
             </div>
             <div class="checkbox">
               <label>
-                <input type="checkbox" name="parkingLot" id="parkingLotBox" value="parkingLot">
+                <input type="checkbox" name="parkingLot" id="parkingLotBox" value="">
                 Parking Available
               </label>
             </div>
@@ -80,14 +74,16 @@
       </div>
     </div>
   </div>
-    <div class="col-md-6 col-md-offset-5">
+    <div class="col-md-7 col-md-offset-5">
       <h2>Coffee Spots</h2>
       <div id="target">
         <script id="coffeespot-template" type="text/x-handlebars-template">
           <div data-id="{{_id}}">
             <hr color="black" width="80%" size:"4" align="LEFT"></hr>
-          <h3> {{name}} </h3>
-          <h4>{{location.city}}</h4>
+            <div class="coffeespotHeader">
+          <h2> {{name}} </h2>
+          <h4>{{location.city}} , CA</h4>
+        </div>
           <img class="image-responsive" src="{{image}}">
           <ul>
             <li>Free wifi: {{freeWifi}} </li>
@@ -96,11 +92,11 @@
             <li>Good for Groups: {{goodForGroups}}</li>
             <li>Parking Available: {{parkingLot}}</li>
           </ul>
-          <span class="buttons">
+          <div class="buttons">
             <a href="{{link}}">Yelp</a>
             <button type="edit" class="btn btn-secondary">Edit</button>
             <button type="delete" class="deleteBtn btn-danger" data-id="{{_id}}">Delete</button>
-          </span>
+          </div>
                 </div>
           </script>
 

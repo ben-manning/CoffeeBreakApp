@@ -1,11 +1,8 @@
-#splashBackground {
-    position: relative;
-}
-
 
 .jumbotron {
-background-image: url(../images/jumbcoffee.jpg);
-background-size: cover;
+  background-image: url(../images/jumbcoffee.jpg);
+  background-size: cover;
+  background-origin:padding-box;
 
 }
 .jumbotron .container {
@@ -13,16 +10,17 @@ background-size: cover;
   position: fixed;
 }
 
-.dropdown {
-    position: relative;
-}
-
-body {
-}
-
 h2 {
-    text-align: left;
-    font-weight: bold;
+  text-align: left;
+  font-weight: bold;
+}
+
+h3 {
+  text-align: center;
+}
+
+.coffeespotHeader {
+    padding: 3px;
 }
 
 #spotEntry {
@@ -33,17 +31,26 @@ h2 {
 }
 
 .form-vertical {
-    font-size: 13px;
-    padding-top: 10px;
+  font-size: 13px;
+  padding-top: 10px;
 }
 
 .col-md-5{
-position: fixed;
+  position: fixed;
 }
 
 .col-md-4{
-position: fixed;
+  position: fixed;
+}
 
+.col-m-7{
+    border-style: solid;
+    border-radius: 10px;
+}
+
+.form-group{
+  border-style: solid;
+  border-radius: 10%;
 }
 
 #addCoffeespot{
@@ -52,32 +59,42 @@ position: fixed;
 }
 
 #attribute-two{
-    margin-left: 130px;
+  margin-left: 130px;
 }
 
 .recommendations {
-    border-style: solid;
+  border-style: solid;
 }
 
 #filterForm {
-    margin-left: 20px;
-    border-style: solid;
+  margin-left: 20px;
+  border-style: solid;
 }
 
 .checkbox {
-    width: 500px;
-    padding-left: 10px;
+  width: 500px;
+  padding-left: 10px;
 }
 
-.buttons {
-    margin-left: 200px;
-
-}
 
 .container {
-    border-style: dashed;;
+  border-style: dashed;;
 }
 
 img {
-    border-radius: 10%;
+  border-radius: 10%;
+  align-items: center;
+  border-style: groove;
+}
+
+ul {
+    float: right;
+    text-align: left;
+    margin-right: 40px;
+    font-size: 18px;
+
+}
+
+.buttons {
+    padding: 10px;
 }

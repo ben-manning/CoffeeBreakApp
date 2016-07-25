@@ -30,7 +30,7 @@ $(document).ready(function(){
     }else{
       $(this).val('true');
     }
-    alert($(this).val());
+    console.log($(this).val());
   });
   $('#outletsBox').change(function(){
     if($(this).attr('checked')){
@@ -38,7 +38,7 @@ $(document).ready(function(){
     }else{
       $(this).val('true');
     }
-    alert($(this).val());
+    console.log($(this).val());
   });
   $('#goodCoffeeBox').change(function(){
     if($(this).attr('checked')){
@@ -46,7 +46,7 @@ $(document).ready(function(){
     }else{
       $(this).val('true');
     }
-    alert($(this).val());
+    console.log($(this).val());
   });
   $('#goodForGroupsBox').change(function(){
     if($(this).attr('checked')){
@@ -54,7 +54,7 @@ $(document).ready(function(){
     }else{
       $(this).val('true');
     }
-    alert($(this).val());
+    console.log($(this).val());
   });
   $('#parkingLotBox').change(function(){
     if($(this).attr('checked')){
@@ -62,7 +62,7 @@ $(document).ready(function(){
     }else{
       $(this).val('true');
     }
-    alert($(this).val());
+    console.log($(this).val());
   });
 
   //DELETE
@@ -85,9 +85,5 @@ $(document).ready(function(){
   function deleteCoffeespotError() {
     console.log("DELETE COFFEESPOT ERROR!");
   }
-
-
-
-
 
 });

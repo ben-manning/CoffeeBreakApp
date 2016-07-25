@@ -9,7 +9,7 @@ var coffeeSpotsList = [
     outdoorSeating: true ,
     parkingLot: false,
     image:"http://www.sandiegotown.com/images/sandiegotown/event/feature/article/LRG_Filter.jpg",
-    location: 'San Diego',
+    location: 'san diego',
     link:"https://www.yelp.com/biz/filter-coffee-house-san-diego"
   },
 
@@ -21,7 +21,7 @@ var coffeeSpotsList = [
     goodForGroups: true,
     parkingLot: false,
     image:"http://farm4.static.flickr.com/3435/3818488866_77c164ee22.jpg",
-    location: 'San Francisco',
+    location: 'san francisco',
     link:"https://www.yelp.com/biz/ritual-coffee-roasters-san-francisco"
   },
 
@@ -33,23 +33,23 @@ var coffeeSpotsList = [
     goodForGroups: true,
     parkingLot: false,
     image:"http://www.missionmission.org/wp-content/uploads/2009/05/3526747032_d16d22a560.jpg",
-    location: 'San Francisco',
+    location: 'san francisco',
     link:"https://www.yelp.com/biz/haus-coffee-san-francisco"
   },
 ];
 
   var locationsList = [
     {
-      city: "San Diego",
+      city: "san diego",
     },
     {
-      city: "San Francisco",
+      city: "san francisco",
     },
     {
-      city: "Los Angeles",
+      city: "los angeles",
     },
     {
-      city: "San Jose"
+      city: "san jose"
     }
   ];
 

@@ -56,7 +56,6 @@ function coffeespotsByLocId(req, res){
             console.log(err);
         }
         console.log(location_id);
-
         db.Coffeespot.find({location: location_id}, function(err, cityCoffeespots){
             if (err) {
                 console.log(cityCoffeespots + "found with" + location_id);
@@ -96,7 +95,6 @@ function create(req, res) {
       });
   });
 }
-
 module.exports = {
   index: index,
   show: show,
