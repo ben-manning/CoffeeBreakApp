@@ -8,7 +8,7 @@ $(document).ready(function(){
 $coffeespotsList = $('#target');
 
 $.get('/api/coffeespots', onSuccess);
-//handlebars
+//HANDLEBARS AND RENDER ON PAGE
   function renderCoffeespot(coffeespot) {
     var coffeespotHtml = $('#coffeespot-template').html();
     var coffeespotTemplate = Handlebars.compile(coffeespotHtml);
@@ -23,6 +23,24 @@ $.get('/api/coffeespots', onSuccess);
     });
   }
 
+  $('#freeWifiBox').change(function(){
+
+    if($(this).attr('checked')){
+          $(this).val('false');
+     }else{
+          $(this).val('true');
+     }
+    alert($(this).val());
+
+});
+
+
+
+
+
+
+
+//DELETE
 $coffeespotsList.on('click', '.deleteBtn', function(){
     console.log("CLICKED Delete button!!");
     $.ajax({
@@ -32,7 +50,6 @@ $coffeespotsList.on('click', '.deleteBtn', function(){
         error: deleteCoffeespotError
     });
 });
-
   function deleteCoffeespotSuccess(json){
       var coffeespot = json;
       console.log(json);
@@ -47,9 +64,11 @@ $coffeespotsList.on('click', '.deleteBtn', function(){
       }
       render();
   }
-
   function deleteCoffeespotError() {
       console.log("DELETE COFFEESPOT ERROR!");
   }
+
+
+
 
 });
