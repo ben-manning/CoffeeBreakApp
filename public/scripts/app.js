@@ -1,4 +1,3 @@
-console.log("SANITY CHECK!");
 var template;
 var $coffeespotsList;
 var allCoffeeSpots = [];
@@ -16,67 +15,49 @@ $(document).ready(function(){
     $('#target').prepend(html);
   }
   function onSuccess(json) {
-    console.log('FOUND ALL COFFEESPOTS');
+    console.log('FOUND COFFEESPOTS INDEX');
     json.forEach(function(coffeespot) {
       renderCoffeespot(coffeespot);
       console.log("SUCCESS rendered the following coffeespots to the page:" + coffeespot);
     });
   }
 
-  //ASSIGNING CHECKBOXES WITH TRUE/FALSE VALS: (Brute code-- need to refactor)
-  $('#freeWifiBox').change(function(){
-    if($(this).attr('checked')){
-      $(this).val('false');
-    }else{
-      $(this).val('true');
-    }
-    console.log($(this).val());
-  });
-  $('#outletsBox').change(function(){
-    if($(this).attr('checked')){
-      $(this).val('false');
-    }else{
-      $(this).val('true');
-    }
-    console.log($(this).val());
-  });
-  $('#goodCoffeeBox').change(function(){
-    if($(this).attr('checked')){
-      $(this).val('false');
-    }else{
-      $(this).val('true');
-    }
-    console.log($(this).val());
-  });
-  $('#goodForGroupsBox').change(function(){
-    if($(this).attr('checked')){
-      $(this).val('false');
-    }else{
-      $(this).val('true');
-    }
-    console.log($(this).val());
-  });
-  $('#parkingLotBox').change(function(){
-    if($(this).attr('checked')){
-      $(this).val('false');
-    }else{
-      $(this).val('true');
-    }
-    console.log($(this).val());
-  });
 
   //ADD NEW COFFEE SPOT
   $("form").on('submit', function(e){
       e.preventDefault();
       var formData = $(this).serialize();
       console.log("formData:", formData);
-      // $.ajax({
-      //     method: 'POST',
-      //     url: '/api/coffeespots',
-      //     success: addCoffeespotSuccess,
-      //     error: addCoffeespotError
-      // });
+      $.ajax({
+          method: 'POST',
+          url: '/api/coffeespots',
+          success: addCoffeespotSuccess,
+          error: addCoffeespotError
+      });
+      $.ajax({
+          method: 'POST',
+          url: '/api/locations',
+          success: addLocationSuccess,
+          error: addLocationError
+      });
   });
+
+  function addCoffeespotSuccess(coffeespot) {
+      console.log(coffeespot);
+      renderCoffeespot(coffeespot);
+  }
+
+  function addCoffeespotError(coffeespot) {
+      return console.log("ERROR! Could not add new coffeespot!");
+  }
+
+  function addLocationSuccess(location){
+      console.log(location);
+  }
+
+  function addLocationError(location) {
+      return console.log("ERROR! Could not add new location!");
+  }
 
 
 
@@ -104,6 +85,49 @@ $(document).ready(function(){
   function deleteCoffeespotError() {
     console.log("DELETE COFFEESPOT ERROR!");
   }
+
+
+    //ASSIGNING CHECKBOXES WITH TRUE/FALSE VALS: (Brute code-- need to refactor)
+    $('#freeWifiBox').change(function(){
+      if($(this).attr('checked')){
+        $(this).val('false');
+      }else{
+        $(this).val('true');
+      }
+      console.log($(this).val());
+    });
+    $('#outletsBox').change(function(){
+      if($(this).attr('checked')){
+        $(this).val('false');
+      }else{
+        $(this).val('true');
+      }
+      console.log($(this).val());
+    });
+    $('#goodCoffeeBox').change(function(){
+      if($(this).attr('checked')){
+        $(this).val('false');
+      }else{
+        $(this).val('true');
+      }
+      console.log($(this).val());
+    });
+    $('#goodForGroupsBox').change(function(){
+      if($(this).attr('checked')){
+        $(this).val('false');
+      }else{
+        $(this).val('true');
+      }
+      console.log($(this).val());
+    });
+    $('#parkingLotBox').change(function(){
+      if($(this).attr('checked')){
+        $(this).val('false');
+      }else{
+        $(this).val('true');
+      }
+      console.log($(this).val());
+    });
 
 
 

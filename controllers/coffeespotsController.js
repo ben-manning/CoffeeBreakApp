@@ -70,12 +70,12 @@ function create(req, res) {
   var location_id = req.params.location_id;
   var newCoffeespot = new db.Coffeespot ({
     name : req.body.name,
+    image : req.body.image,
     freeWifi : req.body.freeWifi,
     outlets : req.body.outlets,
     goodCoffee : req.body.goodCoffee,
     goodForGroups : req.body.goodForGroups,
     parkingLot : req.body.parkingLot,
-    image : req.body.image,
     link : req.body.link
   });
   db.Location.findById(location_id, function(err, location){
