@@ -43,15 +43,11 @@ function update(req, res) {
     if(err) {console.log("!!UPDATE ERROR!!", err); }
     foundCoffeespot.name = req.body.name;
     foundCoffeespot.freeWifi = req.body.freeWifi;
-    foundCoffeespot.fastWifi = req.body.fastWifi;
     foundCoffeespot.outlets = req.body.outlets;
     foundCoffeespot.goodCoffee = req.body.goodCoffee;
-    foundCoffeespot.lively = req.body.lively;
-    foundCoffeespot.quiet = req.body.quiet;
     foundCoffeespot.goodForGroups = req.body.goodForGroups;
-    foundCoffeespot.petFriendly = req.body.petFriendly;
-    foundCoffeespot.parkingLot = req.body.parkingLot;
     foundCoffeespot.image = req.body.image;
+    foundCoffeespot.link = req.body.link;
 
     foundCoffeespot.save(function(err, savedCoffeespot){
       if (err) {console.log("FAILED TO SAVE UPDATED COFFEE SPOT ENTRY"); }
@@ -84,15 +80,11 @@ function create(req, res) {
   var newCoffeespot = new db.Coffeespot ({
     name : req.body.name,
     freeWifi : req.body.freeWifi,
-    fastWifi : req.body.fastWifi,
     outlets : req.body.outlets,
     goodCoffee : req.body.goodCoffee,
-    lively : req.body.lively,
-    quiet : req.body.quiet,
     goodForGroups : req.body.goodForGroups,
-    petFriendly : req.body.petFriendly,
-    parkingLot : req.body.parkingLot,
-    image : req.body.image
+    image : req.body.image,
+    link : req.body.link
   });
   db.Location.findById(location_id, function(err, location){
       if (err) {
@@ -111,9 +103,6 @@ function create(req, res) {
       });
   });
 }
-
-
-
 
 module.exports = {
   index: index,

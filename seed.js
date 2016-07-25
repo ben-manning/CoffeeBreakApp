@@ -3,15 +3,10 @@ var coffeeSpotsList = [
   {
     name: "Filter Coffee House",
     freeWifi: true,
-    fastWifi: true,
     outlets: true,
     goodCoffee: true,
-    lively: true,
-    quiet: false,
     goodForGroups: true ,
     outdoorSeating: true ,
-    petFriendly: true,
-    parkingLot: false,
     image:"http://www.sandiegotown.com/images/sandiegotown/event/feature/article/LRG_Filter.jpg",
     location: 'san diego',
     link:"https://www.yelp.com/biz/filter-coffee-house-san-diego"
@@ -20,15 +15,9 @@ var coffeeSpotsList = [
   {
     name: "Ritual Coffee Roasters",
     freeWifi: true,
-    fastWifi: false,
     outlets: true,
     goodCoffee: true,
-    lively: true,
-    quiet: false,
     goodForGroups: true,
-    outdoorSeating: false,
-    petFriendly: false,
-    parkingLot: false,
     image:"http://farm4.static.flickr.com/3435/3818488866_77c164ee22.jpg",
     location: 'san francisco'
   },
@@ -36,15 +25,9 @@ var coffeeSpotsList = [
   {
     name: "Haus Coffee",
     freeWifi: true,
-    fastWifi: false,
     outlets: true,
     goodCoffee: true,
-    lively: false,
-    quiet: true,
     goodForGroups: true,
-    outdoorSeating: false,
-    petFriendly: false,
-    parkingLot: false,
     image:"http://www.missionmission.org/wp-content/uploads/2009/05/3526747032_d16d22a560.jpg",
     location: 'san francisco'
   }];

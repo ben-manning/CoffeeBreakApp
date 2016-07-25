@@ -50,9 +50,6 @@ function update(req, res) {
     });
 }
 
-
-
-
 module.exports = {
   index: index,
   show: show,

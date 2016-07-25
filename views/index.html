@@ -26,26 +26,20 @@
       </div>
     </div>
 
-                      <button id="add" type="add" class="btn btn-danger">Add Coffee Spot</button>
+    <button id="add" type="add" class="btn btn-danger">Add Coffee Spot</button>
     <div class="row">
       <div id="location" class="col-md-5">
         <h3>Find a coffee spot</h3>
         <div class='form-group'>
           <label class='col-md-5' for='location'>Location</label>
+<br></br>
+          <select class="form-control">
+              <option>San Francisco</option>
+              <option>San Diego</option>
+              <option>San Jose</option>
+              <option>Los Angeles</option>
+            </select>
 
-          <div class="dropdown open">
-          <button class="btn btn-primary dropdown-toggle" type="button" id="location" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Location
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">San Francisco</a>
-            <a class="dropdown-item" href="#">San Jose</a>
-            <a class="dropdown-item" href="#">San Diego</a>
-            <a class="dropdown-item" href="#">Los Angeles</a>
-          </div>
-        </div>
-
-  <button type="find" class="btn btn-danger">Find Coffee Spot</button>
 
 
 
@@ -58,20 +52,8 @@
           <div id="attribute-one"class='col-md-4'>
             <div class="checkbox">
               <label>
-                <input type="checkbox" value="openNow">
-                Open now
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
                 <input type="checkbox" value="freeWifi">
                 Free wifi
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value="fastWifi">
-                Fast wifi
               </label>
             </div>
             <div class="checkbox">
@@ -86,74 +68,46 @@
                 Good Coffee
               </label>
             </div>
-          </div>
-          <div id="attribute-two" class='col-md-4 '>
-
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value="lively">
-                Lively atmosphere
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value="quiet">
-                Quiet atmosphere
-              </label>
-            </div>
             <div class="checkbox">
               <label>
                 <input type="checkbox" value="goodForGroups">
                 Good for groups
               </label>
             </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value="petFriendly">
-                Pet Friendly
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value="parking">
-                Parking lot
-              </label>
-            </div>
+          </div>
+          <div id="find-btn" class='col-md-4 '>
+              <button type="find" class="btn btn-danger">Find Coffee Spot</button>
           </div>
         </form>
 
-      </div>
 
+      </div>
     </div>
+
 
     <div class="col-md-6 col-md-offset-5">
       <h2>Coffee spots</h2>
 
       <div id="target">
         <script id="coffeespot-template" type="text/x-handlebars-template">
+          <div data-coffeespot-id="{{_id}}">
           <h3> {{name}} </h3>
           <h4>{{location.city}}</h4>
           <img class="image-responsive" src="{{image}}">
           <ul>
             <li>Free wifi: {{freeWifi}} </li>
-            <li>Fast wifi: {{fastWifi}} </li>
             <li>Power Outlets: {{outlets}} </li>
             <li>Good Coffee: {{goodCoffee}} </li>
-            <li>Lively Atmosphere: {{lively}} </li>
-            <li>Quiet Atmosphere: {{quiet}}</li>
             <li>Good for Groups: {{goodForGroups}}</li>
-            <li>Outoor Seating: {{outdoorSeating}}</li>
-            <li>Pet Friendly: {{petFriendly}}</li>
-            <li>Parking Lot:  {{parkingLot}}</li>
           </ul>
           <span class="buttons">
-                      <a href="{{link}}">YELP</a>
+            <a href="{{link}}">Yelp</a>
             <button type="edit" class="btn btn-secondary">Edit</button>
-            <button type="delete" class="btn btn-danger">Delete</button>
-
+            <button id="deleteBtn" type="delete" class="btn btn-danger" data-id={{_id}}>Delete</button>
           </span>
+          </script>
         </div>
-      </script>
+        </div>
     </div>
 
   </div>
