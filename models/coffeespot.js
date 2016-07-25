@@ -8,6 +8,7 @@ var CoffeespotSchema = new Schema({
   outlets: Boolean,
   goodCoffee: Boolean,
   goodForGroups: Boolean,
+  parkingLot: Boolean,
   image:String,
   link: String,
   location: {

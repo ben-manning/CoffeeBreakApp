@@ -37,6 +37,7 @@ function update(req, res) {
     foundCoffeespot.outlets = req.body.outlets;
     foundCoffeespot.goodCoffee = req.body.goodCoffee;
     foundCoffeespot.goodForGroups = req.body.goodForGroups;
+    foundCoffeespot.parkingLot = req.body.parkingLot;
     foundCoffeespot.image = req.body.image;
     foundCoffeespot.link = req.body.link;
 
@@ -74,6 +75,7 @@ function create(req, res) {
     outlets : req.body.outlets,
     goodCoffee : req.body.goodCoffee,
     goodForGroups : req.body.goodForGroups,
+    parkingLot : req.body.parkingLot,
     image : req.body.image,
     link : req.body.link
   });

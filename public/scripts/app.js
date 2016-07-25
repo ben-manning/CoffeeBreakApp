@@ -5,10 +5,10 @@ var allCoffeeSpots = [];
 
 $(document).ready(function(){
 
-$coffeespotsList = $('#target');
+  $coffeespotsList = $('#target');
 
-$.get('/api/coffeespots', onSuccess);
-//HANDLEBARS AND RENDER ON PAGE
+  $.get('/api/coffeespots', onSuccess);
+  //HANDLEBARS AND RENDER ON PAGE
   function renderCoffeespot(coffeespot) {
     var coffeespotHtml = $('#coffeespot-template').html();
     var coffeespotTemplate = Handlebars.compile(coffeespotHtml);
@@ -23,44 +23,69 @@ $.get('/api/coffeespots', onSuccess);
     });
   }
 
+  //ASSIGNING CHECKBOXES WITH TRUE/FALSE VALS: (Brute code-- need to refactor)
   $('#freeWifiBox').change(function(){
-
     if($(this).attr('checked')){
-          $(this).val('TRUE');
-     }else{
-          $(this).val('FALSE');
-     }
+      $(this).val('false');
+    }else{
+      $(this).val('true');
+    }
     alert($(this).val());
+  });
+  $('#outletsBox').change(function(){
+    if($(this).attr('checked')){
+      $(this).val('false');
+    }else{
+      $(this).val('true');
+    }
+    alert($(this).val());
+  });
+  $('#goodCoffeeBox').change(function(){
+    if($(this).attr('checked')){
+      $(this).val('false');
+    }else{
+      $(this).val('true');
+    }
+    alert($(this).val());
+  });
+  $('#goodForGroupsBox').change(function(){
+    if($(this).attr('checked')){
+      $(this).val('false');
+    }else{
+      $(this).val('true');
+    }
+    alert($(this).val());
+  });
+  $('#parkingLot').change(function(){
+    if($(this).attr('checked')){
+      $(this).val('false');
+    }else{
+      $(this).val('true');
+    }
+    alert($(this).val());
+  });
 
-});
-
-//DELETE
-$coffeespotsList.on('click', '.deleteBtn', function(){
+  //DELETE
+  $coffeespotsList.on('click', '.deleteBtn', function(e){
     console.log("CLICKED Delete button!!");
+    e.preventDefault();
     $.ajax({
-        method: 'DELETE',
-        url: '/api/coffeespots/' + $(this).attr('data-id'),
-        success: deleteCoffeespotSuccess,
-        error: deleteCoffeespotError
+      method: 'DELETE',
+      url: '/api/coffeespots/' + $(this).attr('data-id'),
+      success: deleteCoffeespotSuccess,
+      error: deleteCoffeespotError
     });
-});
+  });
   function deleteCoffeespotSuccess(json){
-      var coffeespot = json;
-      console.log(json);
-      var coffeespotId = coffeespot._id;
-      console.log("DELETE coffeespot:" + coffeespotId);
-      //find coffeespot entry with correct ID and remove from coffeespots array
-      for(var i = 0; i < allCoffeeSpots.length; i++){
-        if(allCoffeespots[i]._id === coffeespotId) {
-            allCoffeespots.splice(i, 1);
-            break;
-        }
-      }
-      render();
+    var coffeespot = json;
+    var coffeespotId = coffeespot._id;
+    console.log(coffeespotId);
+    $('div[data-id=' + coffeespotId + ']').remove();
   }
   function deleteCoffeespotError() {
-      console.log("DELETE COFFEESPOT ERROR!");
+    console.log("DELETE COFFEESPOT ERROR!");
   }
+
 
 
 

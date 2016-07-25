@@ -7,6 +7,7 @@ var coffeeSpotsList = [
     goodCoffee: true,
     goodForGroups: true ,
     outdoorSeating: true ,
+    parkingLot: false,
     image:"http://www.sandiegotown.com/images/sandiegotown/event/feature/article/LRG_Filter.jpg",
     location: 'San Diego',
     link:"https://www.yelp.com/biz/filter-coffee-house-san-diego"
@@ -18,6 +19,7 @@ var coffeeSpotsList = [
     outlets: true,
     goodCoffee: true,
     goodForGroups: true,
+    parkingLot: false,
     image:"http://farm4.static.flickr.com/3435/3818488866_77c164ee22.jpg",
     location: 'San Francisco',
     link:"https://www.yelp.com/biz/ritual-coffee-roasters-san-francisco"
@@ -29,6 +31,7 @@ var coffeeSpotsList = [
     outlets: true,
     goodCoffee: true,
     goodForGroups: true,
+    parkingLot: false,
     image:"http://www.missionmission.org/wp-content/uploads/2009/05/3526747032_d16d22a560.jpg",
     location: 'San Francisco',
     link:"https://www.yelp.com/biz/haus-coffee-san-francisco"
@@ -70,7 +73,7 @@ var coffeeSpotsList = [
           outlets: coffeespotData.outlets,
           goodCoffee: coffeespotData.goodCoffee,
           goodForGroups: coffeespotData.goodForGroups,
-          outdoorSeating: coffeespotData.outdoorSeating,
+          parkingLot: coffeespotData.parkingLot,
           image: coffeespotData.image
 
         });

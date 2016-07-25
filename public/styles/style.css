@@ -1,3 +1,8 @@
+#splashBackground {
+    position: relative;
+}
+
+
 .jumbotron {
 background-image: url(../images/jumbcoffee.jpg);
 background-size: cover;
@@ -13,7 +18,6 @@ background-size: cover;
 }
 
 body {
-  background-color: darkgray;
 }
 
 h2 {
@@ -33,25 +37,18 @@ h2 {
     padding-top: 10px;
 }
 
-.col-md-6{
-  position: absolute;
-}
-
 .col-md-5{
-    position: fixed;
+position: fixed;
 }
 
 .col-md-4{
-  position: fixed;
+position: fixed;
 
 }
-
 
 #addCoffeespot{
   margin-top: 170px;
   margin-left: 200px;
-
-
 }
 
 #attribute-two{

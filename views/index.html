@@ -68,19 +68,24 @@
                 Good for groups
               </label>
             </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="parkingLot" id="parkingLotBox" value="parkingLot">
+                Parking Available
+              </label>
+            </div>
           </div>
         <button type="add" id="addCoffeespot" class="btn btn-secondary">Add a Coffee Spot!</button>
         </form>
       </div>
     </div>
   </div>
-</div>
-<div class="container-fluid">
     <div class="col-md-6 col-md-offset-5">
       <h2>Coffee Spots</h2>
       <div id="target">
         <script id="coffeespot-template" type="text/x-handlebars-template">
           <div data-id="{{_id}}">
+            <hr color="black" width="80%" size:"4" align="LEFT"></hr>
           <h3> {{name}} </h3>
           <h4>{{location.city}}</h4>
           <img class="image-responsive" src="{{image}}">
@@ -89,14 +94,16 @@
             <li>Power Outlets: {{outlets}} </li>
             <li>Good Coffee: {{goodCoffee}} </li>
             <li>Good for Groups: {{goodForGroups}}</li>
+            <li>Parking Available: {{parkingLot}}</li>
           </ul>
           <span class="buttons">
             <a href="{{link}}">Yelp</a>
             <button type="edit" class="btn btn-secondary">Edit</button>
             <button type="delete" class="deleteBtn btn-danger" data-id="{{_id}}">Delete</button>
           </span>
+                </div>
           </script>
-        </div>
+
         </div>
     </div>
   </div>
