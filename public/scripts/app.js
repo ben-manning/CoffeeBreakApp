@@ -25,27 +25,31 @@ $.get('/api/coffeespots', onSuccess);
 
 $coffeespotsList.on('click', '.deleteBtn', function(){
     console.log("CLICKED Delete button!!");
+    $.ajax({
+        method: 'DELETE',
+        url: '/api/coffeespots/' + $(this).attr('data-coffeespot-id'),
+        success: deleteCoffeespotSuccess,
+        error: deleteCoffeespotError
+    });
 });
-
-
-//when delete coffeespot button is clicked:
-function handleDeleteCoffeespot(e){
-    console.log("Button clicked!");
-}
 
   function deleteCoffeespotSuccess(json){
       var coffeespot = json;
+      console.log(json);
       var coffeespotId = coffeespot._id;
+      console.log("DELETE coffeespot:" + coffeespotId);
       //find coffeespot entry with correct ID and remove from coffeespots array
-      for(var index = 0; index < allCoffeeSpots.length; index++){
-        if(allCoffeespots[index]._id === coffeespotId) {
-            allCoffeespots.splice(index, 1);
+      for(var i = 0; i < allCoffeeSpots.length; i++){
+        if(allCoffeespots[i]._id === coffeespotId) {
+            allCoffeespots.splice(i, 1);
             break;
         }
       }
-      render(json);
+      render();
   }
 
+  function deleteCoffeespotError() {
+      console.log("DELETE COFFEESPOT ERROR!");
+  }
 
-$('.dropdown-toggle').dropdown();
 });
