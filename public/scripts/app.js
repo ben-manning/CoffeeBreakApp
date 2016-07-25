@@ -22,7 +22,6 @@ $(document).ready(function(){
     });
   }
 
-
   //ADD NEW COFFEE SPOT
   $("form").on('submit', function(e){
       e.preventDefault();
@@ -31,31 +30,34 @@ $(document).ready(function(){
       $.ajax({
           method: 'POST',
           url: '/api/coffeespots',
+          data: formData,
           success: addCoffeespotSuccess,
           error: addCoffeespotError
       });
       $.ajax({
           method: 'POST',
           url: '/api/locations',
+          data: formData,
           success: addLocationSuccess,
           error: addLocationError
       });
   });
 
-  function addCoffeespotSuccess(coffeespot) {
-      console.log(coffeespot);
-      renderCoffeespot(coffeespot);
+  function addCoffeespotSuccess(json) {
+      console.log(json);
+      renderCoffeespot(json);
   }
 
-  function addCoffeespotError(coffeespot) {
+  function addCoffeespotError(json) {
       return console.log("ERROR! Could not add new coffeespot!");
   }
 
-  function addLocationSuccess(location){
-      console.log(location);
+  function addLocationSuccess(json){
+      console.log(json);
+      renderCoffeespot(json);
   }
 
-  function addLocationError(location) {
+  function addLocationError(json) {
       return console.log("ERROR! Could not add new location!");
   }
 
