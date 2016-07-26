@@ -61,6 +61,38 @@ $(document).ready(function(){
       return console.log("ERROR! Could not add new location!");
   }
 
+//MODEL TRIGGER
+$('#editModal').on('click', '.editBtn', handleEditCoffeespot);
+
+function handleEditCoffeespot(e){
+    e.preventDefault();
+    var $modal = $("#editModal");
+    var $nameInput = $modal.find('#nameInput');
+    var $locationInput = $modal.find('#locationInput');
+    var $imageInput = $modal.find('#imageInput');
+    var $freeWifiInput = $modal.find('#freeWifiBox');
+    var $outletsInput = $modal.find('#outletsBox');
+    var $goodCoffeeInput = $modal.find('#goodCoffeeBox');
+    var $goodForGroupsInput = $modal.find('#goodForGroupsBox');
+    var $parkingLotInput = $modal.find('#parkingLotBox');
+
+
+
+
+
+
+
+
+
+
+
+    var coffeespotId = $(this).closest();
+
+}
+
+
+
+
   //DELETE
   $coffeespotsList.on('click', '.deleteBtn', function(e){
     e.preventDefault();
@@ -93,49 +125,5 @@ $(document).ready(function(){
         }
         console.log($(this).val());
     });
-
-
-    // $('#freeWifiBox').change(function(){
-    //   if($(this).attr('checked')){
-    //     $(this).val('false');
-    //   }else{
-    //     $(this).val('true');
-    //   }
-    //   console.log($(this).val());
-    // });
-    // $('#outletsBox').change(function(){
-    //   if($(this).attr('checked')){
-    //     $(this).val('false');
-    //   }else{
-    //     $(this).val('true');
-    //   }
-    //   console.log($(this).val());
-    // });
-    // $('#goodCoffeeBox').change(function(){
-    //   if($(this).attr('checked')){
-    //     $(this).val('false');
-    //   }else{
-    //     $(this).val('true');
-    //   }
-    //   console.log($(this).val());
-    // });
-    // $('#goodForGroupsBox').change(function(){
-    //   if($(this).attr('checked')){
-    //     $(this).val('false');
-    //   }else{
-    //     $(this).val('true');
-    //   }
-    //   console.log($(this).val());
-    // });
-    // $('#parkingLotBox').change(function(){
-    //   if($(this).attr('checked')){
-    //     $(this).val('false');
-    //   }else{
-    //     $(this).val('true');
-    //   }
-    //   console.log($(this).val());
-    // });
-
-
 
 });

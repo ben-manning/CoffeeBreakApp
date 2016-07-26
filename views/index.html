@@ -26,6 +26,10 @@
       </div>
     </div>
 
+
+
+
+
     <div class="container-fluid">
       <section>
         <div class="row">
@@ -87,16 +91,41 @@
                   <h4>{{location.city}} , CA</h4>
                 </div>
                 <img class="image-responsive" src="{{image}}">
-                <ul>
-                  <li>Free wifi: {{freeWifi}} </li>
-                  <li>Power Outlets: {{outlets}} </li>
-                  <li>Good Coffee: {{goodCoffee}} </li>
-                  <li>Good for Groups: {{goodForGroups}}</li>
-                  <li>Parking Available: {{parkingLot}}</li>
+                <ul>{{#if freeWifi}}
+                  <li>Free Wifi: YES </li>
+                  {{else}}
+                  <li>Free Wifi: NO </li>
+                  {{/if}}
+
+                  {{#if outlets}}
+                  <li>Power Outlets: YES </li>
+                  {{else}}
+                  <li>Power Outlets: NO </li>
+                  {{/if}}
+
+                  {{#if outlets}}
+                  <li>Good Coffee: YES </li>
+                  {{else}}
+                  <li>Good Coffee: NO </li>
+                  {{/if}}
+
+                  {{#if outlets}}
+                  <li>Good for Groups: YES</li>
+                  {{else}}
+                  <li>Good for Groups: NO</li>
+                  {{/if}}
+
+                  {{#if outlets}}
+                  <li>Parking Available: YES</li>
+                  {{else}}
+                  <li>Parking Available: NO</li>
+                  {{/if}}
                 </ul>
                 <div>
                   <a href="{{link}}">Yelp</a>
-                  <button type="edit" class="btn btn-secondary">Edit</button>
+
+                  <button type="edit" class="btn btn-secondary editBtn">Edit</button>
+
                   <button type="delete" class="deleteBtn btn-danger" data-id="{{_id}}">Delete</button>
                 </div>
               </div>
@@ -113,24 +142,106 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="editModalTitle">Edit Coffee Spot</h4>
+            <h4 class="modal-title">Edit Coffee Spot</h4>
           </div>
-          <div class="modal-body" id='editModalBody'>
-            <p> REPLACE #editModalBody </p>
+          <div class="modal-body">
+
+            <!--handlebars for model-->
+            <script id="coffeespot-template" type="text/x-handlebars-template">
+              <div data-id="{{_id}}">
+                <hr color="black" width="80%" size:"4" align="LEFT"></hr>
+                <div class="coffeespotHeader">
+                  <h2> {{name}} </h2>
+                  <h4>{{location.city}} , CA</h4>
+                </div>
+                <img class="image-responsive" src="{{image}}">
+                <ul>{{#if freeWifi}}
+                  <li>Free Wifi: YES </li>
+                  {{else}}
+                  <li>Free Wifi: NO </li>
+                  {{/if}}
+
+                  {{#if outlets}}
+                  <li>Power Outlets: YES </li>
+                  {{else}}
+                  <li>Power Outlets: NO </li>
+                  {{/if}}
+
+                  {{#if outlets}}
+                  <li>Good Coffee: YES </li>
+                  {{else}}
+                  <li>Good Coffee: NO </li>
+                  {{/if}}
+
+                  {{#if outlets}}
+                  <li>Good for Groups: YES</li>
+                  {{else}}
+                  <li>Good for Groups: NO</li>
+                  {{/if}}
+
+                  {{#if outlets}}
+                  <li>Parking Available: YES</li>
+                  {{else}}
+                  <li>Parking Available: NO</li>
+                  {{/if}}
+                </ul>
+              </div>
+            </script>
+
+
+            <form id="editModalBody" class="form-horizontal">
+
+              <!-- Text Input -->
+              <input id="nameInput" name="name" type="text" placeholder="Name of coffee spot" class="form-control input-md" required="">
+              <input id="locationInput" name="location" type="text" placeholder="City e.g: san francisco" class="form-control input-md" required="">
+              <input id="imageInput" name="image" type="text" placeholder="image url e.g: http://site.com/data/images/coffeecup.jpg" class="form-control input-md">
+
+              <br></br>
+              <label class='col-md-4'>Attributes</label>
+              <br></br>
+              <div id="attribute-one"class='col-md-4'>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="freeWifi" id="freeWifiBox" >
+                    Free wifi
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="outlets" id="outletsBox">
+                    Power Outlets
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="goodCoffee" id="goodCoffeeBox">
+                    Good Coffee
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="goodForGroups" id="goodForGroupsBox">
+                    Good for groups
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="parkingLot" id="parkingLotBox">
+                    Parking Available
+                  </label>
+                </div>
+              </div>
           </div>
+          <!--end Inputs-->
+
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id='editModalSubmit'>Save</button>
           </div>
+        </form>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-
-
-
-
-
-
 
   </body>
   </html>
