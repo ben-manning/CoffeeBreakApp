@@ -25,6 +25,12 @@
         <button type="button" class="btn-lg btn-danger center-block">Find a spot!</button>
       </div>
     </div>
+    <div class='jumbotron2'>
+      <div class='container-fluid'>
+        <h1 id="top"> CoffeeBreak </h1>
+        <p> Your coffee spot hub. </p>
+      </div>
+    </div>
     <div class="container-fluid">
       <section>
         <div class="row">
@@ -93,14 +99,14 @@
             <div data-id="{{_id}}">
               <hr color="black" width="80%" size:"4" align="LEFT"></hr>
               <div class="coffeespotHeader">
-                <h2> {{name}} </h2>
+                <h2 class="coffeeName"> {{name}} </h2>
                 <h4>{{location.city}} , CA</h4>
               </div>
               <img class="image-responsive" src="{{image}}">
               <ul>{{#if freeWifi}}
                 <li>Free Wifi: <span class="glyphicon glyphicon-ok"></span> </li>
                 {{else}}
-                <li>Free Wifi: <span class="glyphicon glyphicon-unchecked"></span> </li>
+                <li>Free Wifi: <span class="glyphicon glyphicon-remove"></span> </li>
                 {{/if}}
 
                 {{#if outlets}}

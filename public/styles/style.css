@@ -7,17 +7,16 @@
   height: calc(100%);
 }
 
-.btn-lg {
+.jumbotron2 {
+    background-image: url(../images/jumbcoffee.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    text-align: left;
 }
 
 body {
-  background-image:url(../images/coffeeSmiley.jpg);
-  opacity: .9;
-  min-height: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;}
+  opacity: .9;}
 
 
   h1 {
@@ -34,32 +33,16 @@ body {
   h2 {
     text-align: center;;
     font-weight: bold;
-    color: white;
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+
   }
 
   h4{
     text-align: center;
-    color: white;
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+
   }
 
   h3 {
     text-align: center;
-    color: white;
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
   }
 
   .coffeespotHeader {
@@ -91,12 +74,14 @@ body {
 
   #addCoffeespot{
     margin-left: 200px;
+    border-style: solid;
+    border-radius: 10px;
   }
 
   .checkbox {
     width: 500px;
     padding-left: 10px;
-    color: white;
+    font-family: sans-serif;
   }
 
   img {
@@ -114,7 +99,6 @@ body {
     margin-right: 50px;
     margin-top: 20px;
     font-size: 18px;
-    color: white;
   }
 
   .buttons {
@@ -125,10 +109,17 @@ body {
     padding: 5px;
   }
 
-  #checkbox {
-    font-family: sans-serif;
-  }
-
 .form-horizontal {
     display: none;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+#top {
+    text-align: left;
+    margin-top: 40px;
+}
+
+.coffeeName {
+    color: red;
 }
