@@ -136,17 +136,16 @@
       </div>
     </section>
 
-    <!--modal-->
-    <div class="modal fade bs-modal-lg" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalTitle">
-      <div class="modal-dialog" role="document">
+    <!--modal FOR THE FUTURE--
+    <div class="modal fade" id="coffeespotModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <button type="button" class="close" data-dismiss="modal"> Close </button>
             <h4 class="modal-title">Edit Coffee Spot</h4>
           </div>
           <div class="modal-body">
-
-            <!--handlebars for model-->
+          handlebars for model
             <script id="coffeespot-template" type="text/x-handlebars-template">
               <div data-id="{{_id}}">
                 <hr color="black" width="80%" size:"4" align="LEFT"></hr>
@@ -188,13 +187,13 @@
               </div>
             </script>
 
-
             <form id="editModalBody" class="form-horizontal">
-
-              <!-- Text Input -->
+            Text Input -
               <input id="nameInput" name="name" type="text" placeholder="Name of coffee spot" class="form-control input-md" required="">
+
               <input id="locationInput" name="location" type="text" placeholder="City e.g: san francisco" class="form-control input-md" required="">
-              <input id="imageInput" name="image" type="text" placeholder="image url e.g: http://site.com/data/images/coffeecup.jpg" class="form-control input-md">
+
+              <input id="imageInput" name="image" type="text" placeholder="image url" class="form-control input-md">
 
               <br></br>
               <label class='col-md-4'>Attributes</label>
@@ -232,16 +231,15 @@
                 </div>
               </div>
           </div>
-          <!--end Inputs-->
-
+          <!--end Inputs
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id='editModalSubmit'>Save</button>
           </div>
         </form>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+        </div>< /.modal-content
+      </div><!-- /.modal-dialog
+    </div><!-- /.modal-->
 
   </body>
   </html>

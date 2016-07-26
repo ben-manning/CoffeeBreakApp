@@ -62,49 +62,32 @@ $(document).ready(function(){
   }
 
   //MODAL TRIGGER
-  $('#target').on('click', '.editBtn', handleEditCoffeespot);
-
-  function handleEditCoffeespot(e){
-    console.log("YOU CLICKED ME!");
-    e.preventDefault();
-    var $modal = $("#editModal");
-    var $nameInput = $modal.find('#nameInput');
-    var $locationInput = $modal.find('#locationInput');
-    var $imageInput = $modal.find('#imageInput');
-    var $freeWifiInput = $modal.find('#freeWifiBox');
-    var $outletsInput = $modal.find('#outletsBox');
-    var $goodCoffeeInput = $modal.find('#goodCoffeeBox');
-    var $goodForGroupsInput = $modal.find('#goodForGroupsBox');
-    var $parkingLotInput = $modal.find('#parkingLotBox');
-    var dataToEdit = {
-      name: $nameInput,
-      location: $locationInput,
-      image: $imageInput,
-      freeWifi: $freeWifiInput,
-      outlets: $outletsInput,
-      goodCoffe: $goodCoffeeInput,
-      goodForGroups: $goodForGroupsInput,
-      parkingLot: $parkingLotInput
-    };
-    console.log(dataToEdit);
-  }
-
-
-
-
-
-
-
-
-
-
-
-  //   var coffeespotId = $(this).closest();
+  // $('#target').on('click', '.editBtn', handleEditCoffeespot);
   //
+  // function handleEditCoffeespot(e){
+  //   e.preventDefault();
+  //   var $modal = $("#coffeespotModal");
+  //   console.log($modal);
+  //   var $nameInput = $modal.find('#nameInput');
+  //   var $locationInput = $modal.find('#locationInput');
+  //   var $imageInput = $modal.find('#imageInput');
+  //   var $freeWifiInput = $modal.find('#freeWifiBox');
+  //   var $outletsInput = $modal.find('#outletsBox');
+  //   var $goodCoffeeInput = $modal.find('#goodCoffeeBox');
+  //   var $goodForGroupsInput = $modal.find('#goodForGroupsBox');
+  //   var $parkingLotInput = $modal.find('#parkingLotBox');
+  //   var dataToEdit = {
+  //     name: $nameInput,
+  //     location: $locationInput,
+  //     image: $imageInput,
+  //     freeWifi: $freeWifiInput,
+  //     outlets: $outletsInput,
+  //     goodCoffe: $goodCoffeeInput,
+  //     goodForGroups: $goodForGroupsInput,
+  //     parkingLot: $parkingLotInput
+  //   };
+  //   $modal.modal();
   // }
-
-
-
 
   //DELETE
   $coffeespotsList.on('click', '.deleteBtn', function(e){
