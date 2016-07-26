@@ -26,83 +26,111 @@
       </div>
     </div>
 
-<div class="container-fluid">
-    <div class="row">
-      <div class="col-md-5">
-        <div class='form-group'>
-        <h3>Add a Coffee Spot</h3>
-            <form class="form-vertical">
-            <input id="nameInput" name="name" type="text" placeholder="Name of coffee spot" class="form-control input-md">
-            <input id="locationInput" name="location" type="text" placeholder="City e.g: san francisco" class="form-control input-md">
-            <input id="imageInput" name="image" type="text" placeholder="image url e.g: http://site.com/data/images/coffeecup.jpg" class="form-control input-md">
-          <br></br>
-          <label class='col-md-4'>Attributes</label>
-          <br></br>
-          <div id="attribute-one"class='col-md-4'>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" name="freeWifi" id="freeWifiBox" value="false">
-                Free wifi
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" name="outlets" id="outletsBox" value="false">
-                Power Outlets
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" name="goodCoffee" id="goodCoffeeBox" value="false">
-                Good Coffee
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" name="goodForGroups" id="goodForGroupsBox" value="false">
-                Good for groups
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" name="parkingLot" id="parkingLotBox" value="false">
-                Parking Available
-              </label>
-            </div>
-          </div>
-        <button type="submit" id="addCoffeespot" class="btn btn-secondary">Add a Coffee Spot!</button>
-        </form>
-      </div>
-    </div>
-  </div>
-    <div class="col-md-7 col-md-offset-5">
-      <h2>Coffee Spots</h2>
-      <div id="target">
-        <script id="coffeespot-template" type="text/x-handlebars-template">
-          <div data-id="{{_id}}">
-            <hr color="black" width="80%" size:"4" align="LEFT"></hr>
-            <div class="coffeespotHeader">
-          <h2> {{name}} </h2>
-          <h4>{{location.city}} , CA</h4>
-        </div>
-          <img class="image-responsive" src="{{image}}">
-          <ul>
-            <li>Free wifi: {{freeWifi}} </li>
-            <li>Power Outlets: {{outlets}} </li>
-            <li>Good Coffee: {{goodCoffee}} </li>
-            <li>Good for Groups: {{goodForGroups}}</li>
-            <li>Parking Available: {{parkingLot}}</li>
-          </ul>
-          <div>
-            <a href="{{link}}">Yelp</a>
-            <button type="edit" class="btn btn-secondary">Edit</button>
-            <button type="delete" class="deleteBtn btn-danger" data-id="{{_id}}">Delete</button>
-          </div>
+    <div class="container-fluid">
+      <section>
+        <div class="row">
+          <div class="col-md-5">
+            <div class='form-group'>
+              <h3>Add a Coffee Spot</h3>
+              <form class="form-vertical">
+                <input id="nameInput" name="name" type="text" placeholder="Name of coffee spot" class="form-control input-md" required="">
+                <input id="locationInput" name="location" type="text" placeholder="City e.g: san francisco" class="form-control input-md" required="">
+                <input id="imageInput" name="image" type="text" placeholder="image url e.g: http://site.com/data/images/coffeecup.jpg" class="form-control input-md">
+                <br></br>
+                <label class='col-md-4'>Attributes</label>
+                <br></br>
+                <div id="attribute-one"class='col-md-4'>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" name="freeWifi" id="freeWifiBox" >
+                      Free wifi
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" name="outlets" id="outletsBox">
+                      Power Outlets
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" name="goodCoffee" id="goodCoffeeBox">
+                      Good Coffee
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" name="goodForGroups" id="goodForGroupsBox">
+                      Good for groups
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" name="parkingLot" id="parkingLotBox">
+                      Parking Available
+                    </label>
+                  </div>
                 </div>
-          </script>
-
+                <button type="submit" id="addCoffeespot" class="btn btn-secondary">Add a Coffee Spot!</button>
+              </form>
+            </div>
+          </div>
         </div>
-    </div>
-  </div>
-</body>
-</html>
+        <div class="col-md-7 col-md-offset-5">
+          <h2>Coffee Spots</h2>
+          <div id="target">
+            <script id="coffeespot-template" type="text/x-handlebars-template">
+              <div data-id="{{_id}}">
+                <hr color="black" width="80%" size:"4" align="LEFT"></hr>
+                <div class="coffeespotHeader">
+                  <h2> {{name}} </h2>
+                  <h4>{{location.city}} , CA</h4>
+                </div>
+                <img class="image-responsive" src="{{image}}">
+                <ul>
+                  <li>Free wifi: {{freeWifi}} </li>
+                  <li>Power Outlets: {{outlets}} </li>
+                  <li>Good Coffee: {{goodCoffee}} </li>
+                  <li>Good for Groups: {{goodForGroups}}</li>
+                  <li>Parking Available: {{parkingLot}}</li>
+                </ul>
+                <div>
+                  <a href="{{link}}">Yelp</a>
+                  <button type="edit" class="btn btn-secondary">Edit</button>
+                  <button type="delete" class="deleteBtn btn-danger" data-id="{{_id}}">Delete</button>
+                </div>
+              </div>
+            </script>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--modal-->
+    <div class="modal fade bs-modal-lg" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalTitle">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="editModalTitle">Edit Coffee Spot</h4>
+          </div>
+          <div class="modal-body" id='editModalBody'>
+            <p> REPLACE #editModalBody </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id='editModalSubmit'>Save</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+
+
+
+
+  </body>
+  </html>

@@ -41,6 +41,7 @@ $(document).ready(function(){
           success: addLocationSuccess,
           error: addLocationError
       });
+        $(this).trigger("reset"); //clears form
   });
 
   function addCoffeespotSuccess(json) {
@@ -54,19 +55,11 @@ $(document).ready(function(){
 
   function addLocationSuccess(json){
       console.log(json);
-      renderCoffeespot(json);
   }
 
   function addLocationError(json) {
       return console.log("ERROR! Could not add new location!");
   }
-
-
-
-
-
-
-
 
   //DELETE
   $coffeespotsList.on('click', '.deleteBtn', function(e){
@@ -90,46 +83,58 @@ $(document).ready(function(){
 
 
     //ASSIGNING CHECKBOXES WITH TRUE/FALSE VALS: (Brute code-- need to refactor)
-    $('#freeWifiBox').change(function(){
-      if($(this).attr('checked')){
-        $(this).val('false');
-      }else{
-        $(this).val('true');
-      }
-      console.log($(this).val());
+    var $attributes = ["$(#freeWifiBox)", "$(#outletsBox)", '$(#goodCoffee)', '$(#goodForGroupsBox)', '$(#parkingLotBox)'];
+
+    $attributes.forEach(function(){
+        if($(this).attr('checked')){
+          $(this).val('true');
+        }else{
+          $(this).val('false');
+        }
+        console.log($(this).val());
     });
-    $('#outletsBox').change(function(){
-      if($(this).attr('checked')){
-        $(this).val('false');
-      }else{
-        $(this).val('true');
-      }
-      console.log($(this).val());
-    });
-    $('#goodCoffeeBox').change(function(){
-      if($(this).attr('checked')){
-        $(this).val('false');
-      }else{
-        $(this).val('true');
-      }
-      console.log($(this).val());
-    });
-    $('#goodForGroupsBox').change(function(){
-      if($(this).attr('checked')){
-        $(this).val('false');
-      }else{
-        $(this).val('true');
-      }
-      console.log($(this).val());
-    });
-    $('#parkingLotBox').change(function(){
-      if($(this).attr('checked')){
-        $(this).val('false');
-      }else{
-        $(this).val('true');
-      }
-      console.log($(this).val());
-    });
+
+
+    // $('#freeWifiBox').change(function(){
+    //   if($(this).attr('checked')){
+    //     $(this).val('false');
+    //   }else{
+    //     $(this).val('true');
+    //   }
+    //   console.log($(this).val());
+    // });
+    // $('#outletsBox').change(function(){
+    //   if($(this).attr('checked')){
+    //     $(this).val('false');
+    //   }else{
+    //     $(this).val('true');
+    //   }
+    //   console.log($(this).val());
+    // });
+    // $('#goodCoffeeBox').change(function(){
+    //   if($(this).attr('checked')){
+    //     $(this).val('false');
+    //   }else{
+    //     $(this).val('true');
+    //   }
+    //   console.log($(this).val());
+    // });
+    // $('#goodForGroupsBox').change(function(){
+    //   if($(this).attr('checked')){
+    //     $(this).val('false');
+    //   }else{
+    //     $(this).val('true');
+    //   }
+    //   console.log($(this).val());
+    // });
+    // $('#parkingLotBox').change(function(){
+    //   if($(this).attr('checked')){
+    //     $(this).val('false');
+    //   }else{
+    //     $(this).val('true');
+    //   }
+    //   console.log($(this).val());
+    // });
 
 
 
