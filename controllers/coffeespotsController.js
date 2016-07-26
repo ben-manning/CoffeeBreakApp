@@ -38,6 +38,9 @@ function update(req, res) {
     foundCoffeespot.goodCoffee = req.body.goodCoffee;
     foundCoffeespot.goodForGroups = req.body.goodForGroups;
     foundCoffeespot.parkingLot = req.body.parkingLot;
+    foundCoffeespot.lively = req.body.lively;
+    foundCoffeespot.outdoorSeating = req.body.outdoorSeating;
+
     foundCoffeespot.image = req.body.image;
     foundCoffeespot.link = req.body.link;
 
@@ -76,6 +79,8 @@ function create(req, res) {
     goodCoffee : req.body.goodCoffee,
     goodForGroups : req.body.goodForGroups,
     parkingLot : req.body.parkingLot,
+    lively: req.body.lively,
+    outdoorSeating: req.body.outdoorSeating,
     link : req.body.link
   });
   db.Location.findById(location_id, function(err, location){

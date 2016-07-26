@@ -61,9 +61,8 @@ $(document).ready(function(){
     return console.log("ERROR! Could not add new location!");
   }
 
-  //MODAL TRIGGER
+  //MODAL TRIGGER (save for later on)
   // $('#target').on('click', '.editBtn', handleEditCoffeespot);
-  //
   // function handleEditCoffeespot(e){
   //   e.preventDefault();
   //   var $modal = $("#coffeespotModal");

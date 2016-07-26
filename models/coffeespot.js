@@ -9,6 +9,8 @@ var CoffeespotSchema = new Schema({
   goodCoffee: Boolean,
   goodForGroups: Boolean,
   parkingLot: Boolean,
+  lively: Boolean,
+  outdoorSeating: Boolean,
   image:String,
   link: String,
   location: {

@@ -1,13 +1,25 @@
-
 .jumbotron {
-  background-image: url(../images/jumbcoffee.jpg);
-  background-size: cover;
-  background-origin:padding-box;
-
+  background-image: url(../images/coffee-shop-table.jpg);
+  background-repeat: space;
+  background-size: 100% 100%;
+  padding-top: 20%;
+  padding-bottom: 20%;
+  height: calc(100%);
 }
+
 .jumbotron .container {
   height: 400px;
   position: fixed;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+#splashText {
+    text-align: center;
+    font-weight: bold;
 }
 
 h2 {
@@ -41,44 +53,25 @@ h3 {
 
 .col-md-4{
   position: fixed;
+  margin-bottom: 30px;
 }
 
 .col-m-7{
-    border-style: solid;
     border-radius: 10px;
 }
 
 .form-group{
-  border-style: solid;
   border-radius: 10%;
 }
 
 #addCoffeespot{
-  margin-top: 170px;
   margin-left: 200px;
 }
 
-#attribute-two{
-  margin-left: 130px;
-}
-
-.recommendations {
-  border-style: solid;
-}
-
-#filterForm {
-  margin-left: 20px;
-  border-style: solid;
-}
 
 .checkbox {
   width: 500px;
   padding-left: 10px;
-}
-
-
-.container {
-  border-style: dashed;;
 }
 
 img {
@@ -87,6 +80,7 @@ img {
   border-style: groove;
   width: 500px;
   height: 300px;
+  padding: 5px;
 }
 
 ul {
@@ -94,9 +88,16 @@ ul {
     text-align: left;
     margin-right: 40px;
     font-size: 18px;
-
 }
 
 .buttons {
     padding: 10px;
+}
+
+#formAdd {
+    padding: 5px;
+}
+
+#checkbox {
+    font-family: sans-serif;
 }
