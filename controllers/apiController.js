@@ -10,7 +10,7 @@ function index(req, res) {
       {method: "POST", path: "/api/coffeespots/", description: "Add a new coffee spot"},
       {method: "PUT", path: "/api/coffeespots/:coffeespot_id", description: "Edit an existing coffee spot"},
       {method: "DELETE", path: "/api/coffeespots/:id", description: "Delete coffee spot by ID"},
-      
+
       {method: "GET", path: "/api/locations", description: "Find all locations"},
       {method: "GET", path: "/api/locations/:location_id", description: "Find locations by ID"},
       {method: "POST", path: "/api/locations/", description: "Add a new location"},

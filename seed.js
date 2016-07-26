@@ -25,7 +25,7 @@ var coffeeSpotsList = [
     outdoorSeating: true,
     image:"http://farm4.static.flickr.com/3435/3818488866_77c164ee22.jpg",
     location: 'san francisco',
-    yelp:"https://www.yelp.com/biz/ritual-coffee-roasters-san-francisco"
+    yelp:"http://www.yelp.com/biz/ritual-coffee-roasters-san-francisco"
   },
 
   {
@@ -39,7 +39,7 @@ var coffeeSpotsList = [
     outdoorSeating: true,
     image:"http://www.missionmission.org/wp-content/uploads/2009/05/3526747032_d16d22a560.jpg",
     location: 'san francisco',
-    yelp:"https://www.yelp.com/biz/haus-coffee-san-francisco"
+    yelp:"http://www.yelp.com/biz/haus-coffee-san-francisco"
   },
   {
     name: "Artis",
@@ -105,6 +105,45 @@ var coffeeSpotsList = [
     image:"https://s3-media2.fl.yelpcdn.com/bphoto/xs4GEA2BOpPYG7bh7o6GrA/o.jpg",
     location: 'san francisco',
     yelp:"https://www.yelp.com/biz/four-barrel-coffee-san-francisco"
+  },
+  {
+    name: "Stumptown Coffee",
+    freeWifi: true,
+    outlets: true,
+    goodCoffee: true,
+    goodForGroups: true,
+    parkingLot: false,
+    lively: true,
+    outdoorSeating: false,
+    image:"https://cdn0.vox-cdn.com/thumbor/9E9kE0atURiBIW3cUJ7Aqb7dwbM=/899x600/cdn0.vox-cdn.com/uploads/chorus_asset/file/953424/09_2013_STUMPTOWN-3_JPG.0.jpg",
+    location: 'los angeles',
+    yelp:"https://www.yelp.com/biz/stumptown-coffee-los-angeles"
+  },
+  {
+    name: "Urth Caffe",
+    freeWifi: true,
+    outlets: true,
+    goodCoffee: true,
+    goodForGroups: true,
+    parkingLot: false,
+    lively: true,
+    outdoorSeating: false,
+    image:"https://s3-media2.fl.yelpcdn.com/bphoto/jPY2xQSSDNbZF86cvLoNGg/o.jpg",
+    location: 'los angeles',
+    yelp:"https://www.yelp.com/biz/urth-caff%C3%A9-los-angeles-6"
+  },
+  {
+    name: "Rasa Caffe",
+    freeWifi: true,
+    outlets: false,
+    goodCoffee: true,
+    goodForGroups: false,
+    parkingLot: false,
+    lively: true,
+    outdoorSeating: true,
+    image:"https://s3-media4.fl.yelpcdn.com/bphoto/JDcJK4Bq1VITQqd11S8j3w/o.jpg",
+    location: 'berkeley',
+    yelp:"https://www.yelp.com/biz/rasa-caffe-berkeley"
   },
 ];
 

@@ -5,12 +5,12 @@ Project 1: Coffee Break is on it's way to becoming a hub of wonderful local, hip
 [Planning](./planningDocs)
 
 **Technologies Used**
--html
--CSS
--Javascript
--Bootstrap
--jQuery
--MongoDB
+*html
+*CSS
+*Javascript
+*Bootstrap
+*jQuery
+*MongoDB
 
 **Existing Features**
 -Users are able to look through an index of coffee spots upon the main page.

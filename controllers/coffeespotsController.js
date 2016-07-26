@@ -1,6 +1,5 @@
 db = require('../models');
 
-//Get all coffeespots in db
 function index(req, res) {
   db.Coffeespot.find()
   .populate('location')
@@ -10,7 +9,6 @@ function index(req, res) {
   });
 }
 
-//show coffeespot by id in db
 function show(req, res){
   var coffeespotId = req.params.coffeespot_id;
   db.Coffeespot.findById(coffeespotId, function(err, foundCoffeespot){
@@ -50,7 +48,6 @@ function update(req, res) {
   });
 }
 
-//find coffeespots by location_id
 function coffeespotsByLocId(req, res){
     var location_id = req.params.location_id;
     db.Location.findById(location_id, function(err, city){
@@ -67,7 +64,6 @@ function coffeespotsByLocId(req, res){
     });
 }
 
-//create coffeespot associated with location_id
 function create(req, res) {
   var location_id = req.params.location_id;
   var newCoffeespot = new db.Coffeespot ({
@@ -88,13 +84,11 @@ function create(req, res) {
       }
       console.log(location_id + "FOUND!");
       newCoffeespot.location = location;
-      //saves new coffeespot to db
       newCoffeespot.save(function(err, coffeespot){
           if (err) {
               return console.log("ERROR. Save Error:" + err);
           }
           console.log("SUCCESS! Saved new coffeespot:" + coffeespot.location);
-          //We need to push this back into the db
           res.json(coffeespot);
       });
   });
