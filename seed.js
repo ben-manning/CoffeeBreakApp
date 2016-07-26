@@ -93,6 +93,19 @@ var coffeeSpotsList = [
     location: 'san francisco',
     yelp:"https://www.yelp.com/biz/four-barrel-coffee-san-francisco"
   },
+  {
+    name: "Philz Coffee",
+    freeWifi: false,
+    outlets: false,
+    goodCoffee: true,
+    goodForGroups: false,
+    parkingLot: false,
+    lively: true,
+    outdoorSeating: false,
+    image:"https://s3-media2.fl.yelpcdn.com/bphoto/xs4GEA2BOpPYG7bh7o6GrA/o.jpg",
+    location: 'san francisco',
+    yelp:"https://www.yelp.com/biz/four-barrel-coffee-san-francisco"
+  },
 ];
 
   var locationsList = [
