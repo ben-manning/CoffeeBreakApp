@@ -24,47 +24,48 @@ $(document).ready(function(){
 
   //ADD NEW COFFEE SPOT
   $("form").on('submit', function(e){
-      e.preventDefault();
-      var formData = $(this).serialize();
-      console.log("formData:", formData);
-      $.ajax({
-          method: 'POST',
-          url: '/api/coffeespots',
-          data: formData,
-          success: addCoffeespotSuccess,
-          error: addCoffeespotError
-      });
-      $.ajax({
-          method: 'POST',
-          url: '/api/locations',
-          data: formData,
-          success: addLocationSuccess,
-          error: addLocationError
-      });
-        $(this).trigger("reset"); //clears form
+    e.preventDefault();
+    var formData = $(this).serialize();
+    console.log("formData:", formData);
+    $.ajax({
+      method: 'POST',
+      url: '/api/coffeespots',
+      data: formData,
+      success: addCoffeespotSuccess,
+      error: addCoffeespotError
+    });
+    $.ajax({
+      method: 'POST',
+      url: '/api/locations',
+      data: formData,
+      success: addLocationSuccess,
+      error: addLocationError
+    });
+    $(this).trigger("reset"); //clears form
   });
 
   function addCoffeespotSuccess(json) {
-      console.log(json);
-      renderCoffeespot(json);
+    console.log(json);
+    renderCoffeespot(json);
   }
 
   function addCoffeespotError(json) {
-      return console.log("ERROR! Could not add new coffeespot!");
+    return console.log("ERROR! Could not add new coffeespot!");
   }
 
   function addLocationSuccess(json){
-      console.log(json);
+    console.log(json);
   }
 
   function addLocationError(json) {
-      return console.log("ERROR! Could not add new location!");
+    return console.log("ERROR! Could not add new location!");
   }
 
-//MODEL TRIGGER
-$('#editModal').on('click', '.editBtn', handleEditCoffeespot);
+  //MODAL TRIGGER
+  $('#target').on('click', '.editBtn', handleEditCoffeespot);
 
-function handleEditCoffeespot(e){
+  function handleEditCoffeespot(e){
+    console.log("YOU CLICKED ME!");
     e.preventDefault();
     var $modal = $("#editModal");
     var $nameInput = $modal.find('#nameInput');
@@ -75,6 +76,18 @@ function handleEditCoffeespot(e){
     var $goodCoffeeInput = $modal.find('#goodCoffeeBox');
     var $goodForGroupsInput = $modal.find('#goodForGroupsBox');
     var $parkingLotInput = $modal.find('#parkingLotBox');
+    var dataToEdit = {
+      name: $nameInput,
+      location: $locationInput,
+      image: $imageInput,
+      freeWifi: $freeWifiInput,
+      outlets: $outletsInput,
+      goodCoffe: $goodCoffeeInput,
+      goodForGroups: $goodForGroupsInput,
+      parkingLot: $parkingLotInput
+    };
+    console.log(dataToEdit);
+  }
 
 
 
@@ -86,9 +99,9 @@ function handleEditCoffeespot(e){
 
 
 
-    var coffeespotId = $(this).closest();
-
-}
+  //   var coffeespotId = $(this).closest();
+  //
+  // }
 
 
 
@@ -114,16 +127,16 @@ function handleEditCoffeespot(e){
   }
 
 
-    //ASSIGNING CHECKBOXES WITH TRUE/FALSE VALS: (Brute code-- need to refactor)
-    var $attributes = ["$(#freeWifiBox)", "$(#outletsBox)", '$(#goodCoffee)', '$(#goodForGroupsBox)', '$(#parkingLotBox)'];
+  //ASSIGNING CHECKBOXES WITH TRUE/FALSE VALS: (Brute code-- need to refactor)
+  var $attributes = ["$(#freeWifiBox)", "$(#outletsBox)", '$(#goodCoffee)', '$(#goodForGroupsBox)', '$(#parkingLotBox)'];
 
-    $attributes.forEach(function(){
-        if($(this).attr('checked')){
-          $(this).val('true');
-        }else{
-          $(this).val('false');
-        }
-        console.log($(this).val());
-    });
+  $attributes.forEach(function(){
+    if($(this).attr('checked')){
+      $(this).val('true');
+    }else{
+      $(this).val('false');
+    }
+    console.log($(this).val());
+  });
 
 });
