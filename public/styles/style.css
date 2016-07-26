@@ -7,97 +7,128 @@
   height: calc(100%);
 }
 
-.jumbotron .container {
-  height: 400px;
-  position: fixed;
+.btn-lg {
 }
 
-h1 {
+body {
+  background-image:url(../images/coffeeSmiley.jpg);
+  opacity: .9;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;}
+
+
+  h1 {
+    text-align: center;
+    font-weight: bolder;
+  }
+
+  #splashText {
     text-align: center;
     font-weight: bold;
-}
 
-#splashText {
-    text-align: center;
+  }
+
+  h2 {
+    text-align: center;;
     font-weight: bold;
-}
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  }
 
-h2 {
-  text-align: left;
-  font-weight: bold;
-}
+  h4{
+    text-align: center;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  }
 
-h3 {
-  text-align: center;
-}
+  h3 {
+    text-align: center;
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  }
 
-.coffeespotHeader {
+  .coffeespotHeader {
     padding: 3px;
-}
+  }
 
-#spotEntry {
-  min-height:100px;
-  width:600px;
-  margin-left:20px;
-  background-color: red;
-}
+  .form-vertical {
+    font-size: 13px;
+    padding-top: 10px;
+  }
 
-.form-vertical {
-  font-size: 13px;
-  padding-top: 10px;
-}
+  .col-md-5{
+    position: fixed;
+  }
 
-.col-md-5{
-  position: fixed;
-}
+  .col-md-4{
+    position: fixed;
+    margin-bottom: 30px;
+  }
 
-.col-md-4{
-  position: fixed;
-  margin-bottom: 30px;
-}
-
-.col-m-7{
+  .col-m-7{
     border-radius: 10px;
-}
+  }
 
-.form-group{
-  border-radius: 10%;
-}
+  .form-group{
+    border-radius: 10%;
+    border-bottom: 20px;
+  }
 
-#addCoffeespot{
-  margin-left: 200px;
-}
+  #addCoffeespot{
+    margin-left: 200px;
+  }
 
+  .checkbox {
+    width: 500px;
+    padding-left: 10px;
+    color: white;
+  }
 
-.checkbox {
-  width: 500px;
-  padding-left: 10px;
-}
+  img {
+    border-radius: 10%;
+    align-items: center;
+    border-style: groove;
+    width: 450px;
+    height: 300px;
+    padding: 5px;
+  }
 
-img {
-  border-radius: 10%;
-  align-items: center;
-  border-style: groove;
-  width: 500px;
-  height: 300px;
-  padding: 5px;
-}
-
-ul {
+  ul {
     float: right;
     text-align: left;
-    margin-right: 40px;
+    margin-right: 50px;
+    margin-top: 20px;
     font-size: 18px;
-}
+    color: white;
+  }
 
-.buttons {
+  .buttons {
     padding: 10px;
-}
+  }
 
-#formAdd {
+  #formAdd {
     padding: 5px;
-}
+  }
 
-#checkbox {
+  #checkbox {
     font-family: sans-serif;
+  }
+
+.form-horizontal {
+    display: none;
 }

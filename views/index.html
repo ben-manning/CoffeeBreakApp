@@ -17,7 +17,6 @@
     <!-- APPLICATION SCRIPTS -->
     <script src="scripts/app.js"></script>
   </head>
-
   <body>
     <div class='jumbotron'>
       <div class='container-fluid'>
@@ -36,7 +35,7 @@
                 <input id="nameInput" name="name" type="text" placeholder="Name of coffee spot" class="form-control input-md" required="">
                 <input id="locationInput" name="location" type="text" placeholder="City e.g: san francisco" class="form-control input-md" required="">
                 <input id="imageInput" name="image" type="text" placeholder="image url e.g: http://site.com/data/images/coffeecup.jpg" class="form-control input-md">
-                <input id="imageInput" name="yelpLink" type="text" placeholder="Yelp Link" class="form-control input-md">
+                <input id="yelpInput" name="yelp" type="text" placeholder="Yelp Link" class="form-control input-md">
                 <label class='col-md-4'>Attributes</label>
                 <div id="attribute-one"class='col-md-4'>
                   <div class="checkbox">
@@ -134,11 +133,9 @@
                   {{/if}}
                 </ul>
                 <div>
-                  <a href="{{link}}">Yelp</a>
-
-                  <button type="edit" class="btn btn-secondary editBtn">Edit</button>
-
+                  <a href="{{yelp}}">Yelp</a>
                   <button type="delete" class="btn btn-danger deleteBtn" data-id="{{_id}}">Delete</button>
+                  <button type="update" class="btn btn-secondary editBtn" data-id="{{_id}}">Edit</button>
 
                 </div>
               </div>
@@ -148,6 +145,7 @@
         </div>
       </div>
     </section>
+
   </body>
   </html>
 

@@ -12,7 +12,7 @@ var CoffeespotSchema = new Schema({
   lively: Boolean,
   outdoorSeating: Boolean,
   image:String,
-  link: String,
+  yelp: String,
   location: {
     type: Schema.Types.ObjectId,
     ref: 'Location'

@@ -40,9 +40,8 @@ function update(req, res) {
     foundCoffeespot.parkingLot = req.body.parkingLot;
     foundCoffeespot.lively = req.body.lively;
     foundCoffeespot.outdoorSeating = req.body.outdoorSeating;
-
     foundCoffeespot.image = req.body.image;
-    foundCoffeespot.link = req.body.link;
+    foundCoffeespot.yelp = req.body.yelp;
 
     foundCoffeespot.save(function(err, savedCoffeespot){
       if (err) {console.log("FAILED TO SAVE UPDATED COFFEE SPOT ENTRY"); }
@@ -81,7 +80,7 @@ function create(req, res) {
     parkingLot : req.body.parkingLot,
     lively: req.body.lively,
     outdoorSeating: req.body.outdoorSeating,
-    link : req.body.link
+    yelp : req.body.yelp
   });
   db.Location.findById(location_id, function(err, location){
       if (err) {

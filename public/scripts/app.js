@@ -4,6 +4,12 @@ var allCoffeeSpots = [];
 
 $(document).ready(function(){
 
+$('.jumbotron').click(function(e){
+    $('.jumbotron').fadeOut('slow', function(){
+      $('.container-fluid').fadeIn('slow');
+    });
+});
+
   $coffeespotsList = $('#target');
 
   $.get('/api/coffeespots', onSuccess);
@@ -61,6 +67,49 @@ $(document).ready(function(){
     return console.log("ERROR! Could not add new location!");
   }
 
+    //DELETE
+    $coffeespotsList.on('click', '.deleteBtn', function(e){
+      e.preventDefault();
+      $.ajax({
+        method: 'DELETE',
+        url: '/api/coffeespots/' + $(this).attr('data-id'),
+        success: deleteCoffeespotSuccess,
+        error: deleteCoffeespotError
+      });
+    });
+    function deleteCoffeespotSuccess(json){
+      var coffeespot = json;
+      var coffeespotId = coffeespot._id;
+      console.log(coffeespotId);
+      $('div[data-id=' + coffeespotId + ']').remove();
+    }
+    function deleteCoffeespotError() {
+      console.log("DELETE COFFEESPOT ERROR!");
+    }
+
+    //EDIT DIV FROM FADE IN
+    $('.editBtn').click(function(e){
+        console.log("Edit Button clicked!");
+        $('.form-horizontal edit').fadeIn('slow', function(){
+        });
+    });
+
+
+
+    //ASSIGNING CHECKBOXES WITH TRUE/FALSE VALS: (Brute code-- need to refactor)
+    var $attributes = ["$(#freeWifiBox)", "$(#outletsBox)", '$(#goodCoffee)', '$(#goodForGroupsBox)', '$(#parkingLotBox)'];
+
+    $attributes.forEach(function(){
+      if($(this).attr('checked')){
+        $(this).val('true');
+      }else{
+        $(this).val('false');
+      }
+      console.log($(this).val());
+    });
+
+  });
+
   //MODAL TRIGGER (save for later on)
   // $('#target').on('click', '.editBtn', handleEditCoffeespot);
   // function handleEditCoffeespot(e){
@@ -87,38 +136,3 @@ $(document).ready(function(){
   //   };
   //   $modal.modal();
   // }
-
-  //DELETE
-  $coffeespotsList.on('click', '.deleteBtn', function(e){
-    e.preventDefault();
-    $.ajax({
-      method: 'DELETE',
-      url: '/api/coffeespots/' + $(this).attr('data-id'),
-      success: deleteCoffeespotSuccess,
-      error: deleteCoffeespotError
-    });
-  });
-  function deleteCoffeespotSuccess(json){
-    var coffeespot = json;
-    var coffeespotId = coffeespot._id;
-    console.log(coffeespotId);
-    $('div[data-id=' + coffeespotId + ']').remove();
-  }
-  function deleteCoffeespotError() {
-    console.log("DELETE COFFEESPOT ERROR!");
-  }
-
-
-  //ASSIGNING CHECKBOXES WITH TRUE/FALSE VALS: (Brute code-- need to refactor)
-  var $attributes = ["$(#freeWifiBox)", "$(#outletsBox)", '$(#goodCoffee)', '$(#goodForGroupsBox)', '$(#parkingLotBox)'];
-
-  $attributes.forEach(function(){
-    if($(this).attr('checked')){
-      $(this).val('true');
-    }else{
-      $(this).val('false');
-    }
-    console.log($(this).val());
-  });
-
-});

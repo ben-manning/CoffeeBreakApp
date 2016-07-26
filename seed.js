@@ -11,7 +11,7 @@ var coffeeSpotsList = [
     outdoorSeating: true,
     image:"http://www.sandiegotown.com/images/sandiegotown/event/feature/article/LRG_Filter.jpg",
     location: 'san diego',
-    link:"https://www.yelp.com/biz/filter-coffee-house-san-diego"
+    yelp:"https://www.yelp.com/biz/filter-coffee-house-san-diego"
   },
 
   {
@@ -25,7 +25,7 @@ var coffeeSpotsList = [
     outdoorSeating: true,
     image:"http://farm4.static.flickr.com/3435/3818488866_77c164ee22.jpg",
     location: 'san francisco',
-    link:"https://www.yelp.com/biz/ritual-coffee-roasters-san-francisco"
+    yelp:"https://www.yelp.com/biz/ritual-coffee-roasters-san-francisco"
   },
 
   {
@@ -39,7 +39,7 @@ var coffeeSpotsList = [
     outdoorSeating: true,
     image:"http://www.missionmission.org/wp-content/uploads/2009/05/3526747032_d16d22a560.jpg",
     location: 'san francisco',
-    link:"https://www.yelp.com/biz/haus-coffee-san-francisco"
+    yelp:"https://www.yelp.com/biz/haus-coffee-san-francisco"
   },
   {
     name: "Artis",
@@ -52,7 +52,7 @@ var coffeeSpotsList = [
     outdoorSeating: false,
     image:"http://i0.wp.com/www.dailycal.org/assets/uploads/2014/09/20140914_103446-900x675.jpg",
     location: 'berkeley',
-    link:"https://www.yelp.com/biz/art%C3%ADs-coffee-berkeley-2"
+    yelp:"https://www.yelp.com/biz/art%C3%ADs-coffee-berkeley-2"
   },
   {
     name: "Capital One Cafe",
@@ -65,7 +65,7 @@ var coffeeSpotsList = [
     outdoorSeating: false,
     image:"https://workfrom.co/siteadmin/wp-content/uploads/2014/10/8691149978_14b06b2993_k.jpg",
     location: 'san francisco',
-    link:"https://www.yelp.com/biz/capital-one-caf%C3%A9-san-francisco"
+    yelp:"https://www.yelp.com/biz/capital-one-caf%C3%A9-san-francisco"
   },
   {
     name: "Cafe International",
@@ -78,7 +78,7 @@ var coffeeSpotsList = [
     outdoorSeating: true,
     image:"https://workfrom.co/siteadmin/wp-content/uploads/2014/10/8691149978_14b06b2993_k.jpg",
     location: 'san francisco',
-    link:"https://s3-media1.fl.yelpcdn.com/bphoto/xcobt48F8WLWv6-Ba62hDA/o.jpg"
+    yelp:"https://s3-media1.fl.yelpcdn.com/bphoto/xcobt48F8WLWv6-Ba62hDA/o.jpg"
   },
   {
     name: "Four Barrel",
@@ -91,7 +91,7 @@ var coffeeSpotsList = [
     outdoorSeating: false,
     image:"https://s3-media2.fl.yelpcdn.com/bphoto/xs4GEA2BOpPYG7bh7o6GrA/o.jpg",
     location: 'san francisco',
-    link:"https://www.yelp.com/biz/four-barrel-coffee-san-francisco"
+    yelp:"https://www.yelp.com/biz/four-barrel-coffee-san-francisco"
   },
 ];
 
