@@ -94,8 +94,6 @@ $('.jumbotron').click(function(e){
         });
     });
 
-
-
     //ASSIGNING CHECKBOXES WITH TRUE/FALSE VALS: (Brute code-- need to refactor)
     var $attributes = ["$(#freeWifiBox)", "$(#outletsBox)", '$(#goodCoffee)', '$(#goodForGroupsBox)', '$(#parkingLotBox)'];
 
@@ -107,6 +105,10 @@ $('.jumbotron').click(function(e){
       }
       console.log($(this).val());
     });
+
+    $("#button").on("click", function() {
+    $("body").scrollTop(0);
+});
 
   });
 
